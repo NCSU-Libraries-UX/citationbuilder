@@ -3,8 +3,8 @@
         <p>I want to cite a</p>
     </div>
     <div class="columns medium-4" id="cite-select">
-        <select name="cite">
-            <option value="default">--</option>
+        <select name="cite" aria-labelledby="cite-select">
+            <option value="default"> </option>
             <option value="book">book (in its entirety)</option>
             <option value="chapter">chapter or essay from a book</option>
             <option value="magazine">magazine article</option>
@@ -14,11 +14,11 @@
         </select>
     </div>
     <div class="columns medium-2" id="cite-style-text">
-        <p> in Citation style</p>
+        <p>in Citation style</p>
     </div>
     <div class="columns medium-4" id="cite-style-select">
-        <select name="citation-style">
-            <option value="default">--</option>
+        <select name="citation-style" aria-labelledby="cite-style-text">
+            <option value="default"> </option>
             <option value="apa">APA 6</option>
             <option value="modern-language-association">MLA 7</option>
             <option value="modern-language-association-8">MLA 8</option>

@@ -6,7 +6,8 @@
 
 <head>
     <title>Citation Builder | NCSU Libraries</title>
-    <!--#include virtual="/sites/all/themes/ncsulib_foundation/templates/includes/head.html" -->
+    <link rel="stylesheet" href="styles/app.css" />
+    <?php include('https://cdn.lib.ncsu.edu/shared-website-assets/head/head.html'); ?>
     <script type="text/javascript" src="./citeproc-js/xmldom.js"></script>
     <script type="text/javascript" src="./citeproc-js/citeproc.js"></script>
     <script src="scripts/datepicker.js"></script>
@@ -14,7 +15,6 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/data-storage.js"></script>
-    <link rel="stylesheet" href="styles/app.css" />
 </head>
 <body>
 
@@ -22,14 +22,16 @@
         <div class="inner-wrap">
 
             <!-- HEADER: do not remove -->
-            <!--#include virtual="/sites/all/themes/ncsulib_foundation/templates/includes/header.html" -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.lib.ncsu.edu/shared-website-assets/latest/header/header.css">
+            <?php include("https://cdn.lib.ncsu.edu/shared-website-assets/latest/header/header.html"); ?>
+            <script src="https://cdn.lib.ncsu.edu/shared-website-assets/latest/header/header-app.js?search=true" type="text/javascript" id="ncsu-lib-header"></script>
 
             <div id="content" role="document" class="page">
                 <main id="main-content" role="main" class="row l-main">
 
                     <!-- MAIN CONTENT HERE -->
 
-                    <div class="medium-9 columns main">
+                    <div class="medium-12 columns main">
                         <h1>Citation Builder</h1>
 
                         <?php include './includes/citation-select.php'; ?>
@@ -48,48 +50,38 @@
                                     print '</div>';
                                 }
                             ?>
-                            <!-- <p><small>Miss the old <a href="/citationbuilder/old/">Citation Builder?</a></small></p> -->
                         </div>
 
-
-                        <div id="citation-modal" class="reveal-modal row" data-reveal data-reveal-id="citation-modal">
+                        <div class="reveal" id="citation-modal" data-reveal>
                             <div id="citation-content"></div>
-                            <a class="close-reveal-modal">&#215;</a>
+                            <button class="close-button" id="close-button" data-close aria-label="Close modal" type="button">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
 
 
-                        <p>The Citation Builder is based on the following citation manuals:</p>
+                        <h3>The Citation Builder is based on the following citation manuals:</h3>
 
                         <ul>
                             <li>American Psychological Association 6th edition</li>
                             <li>Modern Language Association 7th edition</li>
                             <li>Modern Language Association 8th edition</li>
-                            <li>Chicago Manual of Style 16th edition (author-date)</li>
-                            <li>Council of Science Editors, Name-Year (author-date)</li>
+                            <li>Chicago Manual of Style 16th edition</li>
+                            <li>Council of Science Editors</li>
                         </ul>
 
-
+                        <p><a href="http://www.lib.ncsu.edu/do/citation-management">Citation Management Tools</a></p>
                     </div>
 
-
-                    <aside class="medium-3 columns sidebar">
-
-                        <div class="sidebar">
-                            <h2>Citation Resources</h2>
-                            <ul>
-                                <li><a href="/tools-citation">Citation tools</a></li>
-                                <li><a href="/do/reference-management">Citation management</a></li>
-                            </ul>
-                        </div>
-
-                    </aside>
 
                     <!--- end content -->
                 </main>
             </div> <!-- end .page -->
             <!-- FOOTER: do not remove -->
-            <!--#include virtual="/sites/all/themes/ncsulib_foundation/templates/includes/footer.html" -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.lib.ncsu.edu/shared-website-assets/latest/footer/footer.css">
+            <?php include("https://cdn.lib.ncsu.edu/shared-website-assets/latest/footer/footer.html"); ?>
         </div> <!-- end .inner-wrap -->
     </div> <!-- end .off-canvas-wrap -->
 </body>
 </html>
+

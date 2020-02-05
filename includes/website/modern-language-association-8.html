@@ -7,8 +7,8 @@
     <div class="contributor-container">
         <div class="row contributor">
             <div class="columns medium-2 field print digital">
-                <label for="author">Contributor
-                    <select name="contributor">
+                <label for="contributormla8">Contributor
+                    <select name="contributor" id="contributormla8">
                         <option value="author">Author</option>
                         <option value="editor">Editor</option>
                         <option value="translator">Translator</option>
@@ -16,41 +16,47 @@
                 </label>
             </div>
             <div class="columns medium-4 field print digital">
-                <label>First Name<input type="text" name="given" /></label>
+                <label>First Name</label>
+                 <input type="text" name="given" aria-labelledby="form-type">
             </div>
             <div class="columns medium-1 field print digital">
-                <label>MI<input type="text" name="givenMiddle" /></label>
+                <label>MI</label>
+                <input type="text" name="givenMiddle" aria-labelledby="form-type">
             </div>
             <div class="columns medium-4 last-name field print digital">
-                <label>Last Name/Corp.<input type="text" name="family" /></label>
+                <label>Last Name/Corp.</label>
+                <input type="text" name="family" aria-labelledby="form-type">
             </div>
             <div class="columns medium-1 field print digital">
-                <div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i></a></small></div>
+                <div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></a></small></div>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-1 right">
-            <div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i></a></small></div>
+            <div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></a></small></div>
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="title">Title or Description of the Page<input type="text" name="title" /></label>
+            <label for="title">Title or Description of the Page</label>
+             <input type="text" name="title" aria-labelledby="form-type">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="container-title">Publisher or Sponsor of Site<input type="text" name="container-title" /></label>
+            <label for="container-title">Publisher or Sponsor of Site</label>
+            <input type="text" name="container-title" aria-labelledby="form-type">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field digital">
-            <label for="URL">URL<input type="text" name="URL" placeholder="website.com" /></label>
+            <label for="URL">URL</label>
+            <input type="hidden" name="URL" placeholder="website.com" aria-labelledby="form-type"/>
         </div>
     </div>
 
@@ -96,15 +102,17 @@
 
     <div class="row">
         <div class="columns medium-4 field digital left">
-            <label for="issued">Date Published<input type="text" name="issued" placeholder="dd-mm-yyyy" class="fdatepicker" data-date-format="dd-mm-yyyy" /></label>
+            <label for="issued">Date Published</label>
+            <input type="date" name="issued" class="" aria-labelledby="form-type">
         </div>
-        <div class="columns medium-2 field digital left">
-        <label for="issued-time">&nbsp;<input type="text" name="issued-time" placeholder="hh:mm" class="fdatepicker-time" data-date-format="hh:ii" /></label>
-        </div>
+     <!--    <div class="columns medium-2 field digital left">
+            <label for="issued-time">Time published</label>
+            <input type="text" name="issued-time" placeholder="hh:mm" class="fdatepicker-time" data-date-format="hh:ii" aria-labelledby="form-type" />
+        </div> -->
     </div>
 
     <div class="row" id="submit-area">
-        <div class="columns medium-2">
+        <div class="columns medium-1">
             <input type="submit" value="Submit">
         </div>
     </div>

@@ -81,7 +81,7 @@ var app = {
     clearForm : function(){
 
         if ($('form.citation-form[data-csl="'+app.style+'"] #clear-form').length==0) {
-            var clearBtn = '<p><a href="#" id="clear-form" class="button tiny disabled">Clear form</a></p>';
+            var clearBtn = '<p><a href="#" id="clear-form" class="button">Clear form</a></p>';
             $('form.citation-form[data-csl="'+app.style+'"] input[type=submit]').parent().after(clearBtn);
             app.initClearFormButton();
         }

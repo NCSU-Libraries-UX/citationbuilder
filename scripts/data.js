@@ -2,7 +2,6 @@ var data = {
 
     init: function(){
         var activeForm = $('select[name*="citation-style"]').val();
-
         $('.citation-form').submit(function(e){
             data.activateForm(e.currentTarget);
             e.preventDefault();
@@ -16,18 +15,21 @@ var data = {
         data.json = data.buildJson();
 
         $('#citation-content').html(cite.init(data.json, data.csl));
-        $('#citation-modal').foundation('reveal', 'open');
+        $('#citation-modal').foundation('open');
+        document.getElementById('close-button').addEventListener('click', function(e){
+            $('#citation-modal').foundation('close');
+        })
 
         // remove foundation's default click handler because it was closing
-        $( document ).off("click");
+        // $( document ).off("click");
 
 
-        $('.close-reveal-modal').click(function(){
-            $('#citation-modal').foundation('reveal', 'close');
-        })
-        $('.reveal-modal-bg').click(function(){
-            $('#citation-modal').foundation('reveal', 'close');
-        })
+        // $('.close-reveal-modal').click(function(){
+        //     $('#citation-modal').foundation('reveal', 'close');
+        // })
+        // $('.reveal-modal-bg').click(function(){
+        //     $('#citation-modal').foundation('reveal', 'close');
+        // })
 
     },
 

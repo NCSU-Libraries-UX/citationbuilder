@@ -2,12 +2,15 @@
 #citation-chooser{
     margin-bottom: 30px;
 }
+#citation-chooser select{
+    height: 50px;
+}
 #cite-text{
     padding-right: 0px;
 }
 #cite-text p{
-    font-size: 1rem;
-    padding-top: 5px;
+    font-size: 1.25rem;
+    padding-top: 10px;
 }
 @media only screen and (min-device-width: 768px){
     #cite-select{
@@ -16,21 +19,27 @@
     #cite-select select{}
     #cite-style-text{
         padding-left: 0px;
-        padding-right: 0px;
+        padding-right: 10px;
+        text-align: right;
     }
     #cite-style-select{
         padding-left: 0px;
     }
 }
 #cite-style-text p{
-    font-size: 1rem;
-    padding-top: 5px;
+    font-size: 1.25rem;
+    padding-top: 10px;
 }
 
 
 a#clear-form{
-    background: #555;
-    color: #fff;
+    background: #999;
+    color: #FFF;
+    padding: 10px;
+}
+a#clear-form:hover{
+    background: #333;
+    cursor: pointer;
 }
 @media only screen and (max-device-width: 768px){
     a#clear-form{
@@ -54,24 +63,24 @@ a#clear-form{
     border-bottom: 1px solid #ddd;
 }
 .citation-form .citation li{
-
+    display: inline-block;
 }
 /*.citation-form .citation li:first-child a{
     border-left: 1px solid #ddd;
     border-right: 0px;
 }*/
 .citation-form .citation li a{
-    border-bottom: 1px solid ##F5F5F5;
+    border-radius: 0px;
+    border-bottom: 1px solid #F5F5F5;
     border-right: 1px solid #ddd;
     border-top: 1px solid #ddd;
     opacity: 1;
 }
 .citation-form .citation li:first-child a.button{
-    /*margin-bottom: 0px;*/
     border-left: 1px solid #ccc;
 }
 .citation-form .citation li a.button{
-    margin-bottom: 0px;
+    margin-bottom: -1px;
     border-left: 0px solid #ccc;
 }
 .citation-form .citation li a.active{
@@ -90,7 +99,6 @@ a#clear-form{
 
 .citation-form .button.active.disabled{
     background: #FFF;
-    /*color: #FFF;*/
 }
 .citation-form .button.disabled{
     background: #F5f5f5;
@@ -179,4 +187,24 @@ input[type='text'],input[type='number']{
     }
 
     input[type='text'],input[type='number'],textarea, select {font-size:16px !important;}
+}
+
+input[type="submit"]{
+    background: #cc0000;
+    border: 0px;
+    border-radius: 3px;
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+}
+input[type="submit"]:hover{
+    background: #780202;
+    cursor: pointer;
+}
+
+span.hidden{
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display:  block;
 }
