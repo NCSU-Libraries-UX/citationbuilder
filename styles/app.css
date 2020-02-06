@@ -76,6 +76,9 @@ a#clear-form:hover{
     border-top: 1px solid #ddd;
     opacity: 1;
 }
+.citation-form .citation li a:hover{
+    cursor: pointer;
+}
 .citation-form .citation li:first-child a.button{
     border-left: 1px solid #ccc;
 }
@@ -88,6 +91,7 @@ a#clear-form:hover{
     border-left: 0px solid #ccc;
     border-right: 1px solid #ccc;
     border-top: 1px solid #ccc;
+    color: #333;
     margin-bottom: -1px;
 }
 .citation-form .citation li:first-child a.active{
@@ -207,4 +211,8 @@ span.hidden{
     white-space: nowrap;
     overflow: hidden;
     display:  block;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1c9b04bca802d0e6a502695976a7fb93bb5cbd19
