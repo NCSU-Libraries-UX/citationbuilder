@@ -439,7 +439,7 @@
       <if variable="issued">
         <group delimiter=" ">
           <date variable="original-date" form="text" date-parts="year" prefix="(" suffix=")"/>
-          <date variable="issued">
+          <date variable="issued" prefix=", ">
             <date-part name="year"/>
           </date>
         </group>

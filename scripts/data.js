@@ -91,12 +91,12 @@ var data = {
                 if(name == 'year'){json['Item-1']['issued'] = {'date-parts' : [[val]]};}
                 if(name == 'accessed'){
                     var str = val.split('-');
-                    json['Item-1'][name] = {'date-parts' : [[str[2],str[1],str[0]]]};
+                    json['Item-1'][name] = {'date-parts' : [[str[0],str[1],str[2]]]};
                 }
 
                 if(name == 'issued' && val != ''){
                     var str = val.split('-');
-                    json['Item-1'][name] = {'date-parts' : [[str[2],str[1],str[0],'10:00']]};
+                    json['Item-1'][name] = {'date-parts' : [[str[0],str[1],str[2],'10:00']]};
                 }
 
                 // month/year inputs
