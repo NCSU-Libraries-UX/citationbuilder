@@ -8,6 +8,7 @@
     <title>Citation Builder | NCSU Libraries</title>
     <link rel="stylesheet" href="styles/app.css" />
     <?php include('https://cdn.lib.ncsu.edu/shared-website-assets/head/head.html'); ?>
+    <link rel="stylesheet" media="all" href="/themes/custom/ncsulibraries/styles/fontawesome/css/all.css" />
     <script type="text/javascript" src="./citeproc-js/xmldom.js"></script>
     <script type="text/javascript" src="./citeproc-js/citeproc.js"></script>
     <script src="scripts/datepicker.js"></script>
