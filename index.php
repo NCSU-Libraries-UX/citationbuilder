@@ -23,7 +23,7 @@
 
             <!-- HEADER: do not remove -->
             <link rel="stylesheet" type="text/css" href="https://cdn.lib.ncsu.edu/shared-website-assets/latest/header/header.css">
-            <?php include("https://cdn.lib.ncsu.edu/shared-website-assets/latest/header/header.html"); ?>
+            <?php include "https://cdn.lib.ncsu.edu/shared-website-assets/latest/header/header.html"; ?>
             <script src="https://cdn.lib.ncsu.edu/shared-website-assets/latest/header/header-app.js?search=true" type="text/javascript" id="ncsu-lib-header"></script>
 
             <div id="content" role="document" class="page">
@@ -38,7 +38,7 @@
 
                         <div id="form-container">
                             <?php
-                                $csl_array = array('apa','chicago-author-date','council-of-science-editors-author-date','modern-language-association','modern-language-association-8');
+                                $csl_array = array('apa','apa7','chicago-author-date','council-of-science-editors-author-date','modern-language-association','modern-language-association-8');
                                 $medium_array = array('book','chapter','magazine','newspaper','article-journal','website');
                                 foreach($medium_array as $med){
                                     print '<div class="form-parent" id="'.$med.'">';

@@ -1,0 +1,102 @@
+<form class="citation-form" data-csl="apa7">
+    <ul class="button-group unstyle-list citation">
+        <li><a class="tiny button disabled active" data-citation="print" href="#">print</a></li>
+        <li><a class="tiny button disabled" data-citation="digital" href="#">digital</a></li>
+    </ul>
+    <input type="hidden" name="type" value="chapter" id="form-type" />
+
+    <div class="contributor-container">
+        <div class="row contributor">
+            <div class="columns medium-2 field print digital">
+                <label for="contributor-chapter">Contributor
+                    <select name="contributor" id="contributor-chapter">
+                        <option value="author">Author</option>
+                        <option value="editor">Editor</option>
+                        <option value="translator">Translator</option>
+                    </select>
+                </label>
+            </div>
+            <div class="columns medium-4 field print digital">
+                <label>First Name</label>
+                <input type="text" name="given" aria-labelledby="form-type">
+            </div>
+            <div class="columns medium-1 field print digital">
+                <label>MI</label>
+                <input type="text" name="givenMiddle" aria-labelledby="form-type">
+            </div>
+            <div class="columns medium-4 last-name field print digital">
+                <label>Last Name/Corp.</label>
+                <input type="text" name="family" aria-labelledby="form-type">
+            </div>
+            <div class="columns medium-1 field print digital">
+                <div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></a></small></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-1 right">
+            <div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></a></small></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-12 field print digital">
+            <label for="title">Chapter/Essay Title</label>
+            <input type="text" name="title" aria-labelledby="form-type">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-12 field print digital">
+            <label for="container-title">Book Title</label>
+            <input type="text" name="container-title" aria-labelledby="form-type">
+        </div>
+    </div>
+
+    <label for="publisher">Publication Info</label>
+    <div class="row">
+        <div class="columns medium-6 field print digital">
+            <label for="publisher">Publisher</label>
+            <input type="text" name="publisher" placeholder="publisher" aria-labelledby="form-type">
+        </div>
+        <div class="columns medium-3 field print digital">
+            <label for="location">Location
+            </label>
+             <input type="text" name="publisher-place" placeholder="location" aria-labelledby="form-type">
+        </div>
+        <div class="columns medium-3 field print digital left">
+            <label for="issued-yr">Issued (year)
+            </label>
+             <input type="text" name="issued-yr" placeholder="year" aria-labelledby="form-type">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-3 field print digital">
+            <label for="page">Pages</label>
+             <input type="text" name="page" placeholder="ex: 100-110" aria-labelledby="form-type">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-12 field digital">
+            <label for="URL">URL</label>
+            <input type="text" name="URL" aria-labelledby="form-type">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-7 field digital">
+            <p>or</p>
+            <label for="DOI">DOI</label>
+            <input type="text" name="DOI"  aria-labelledby="form-type">
+        </div>
+    </div>
+
+    <div class="row" id="submit-area">
+        <div class="columns medium-1">
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+</form>
