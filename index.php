@@ -60,7 +60,6 @@
                             </button>
                         </div>
 
-
                         <h3>The Citation Builder is based on the following citation manuals:</h3>
 
                         <ul>
@@ -74,7 +73,6 @@
                         <p><a href="http://www.lib.ncsu.edu/do/citation-management">Citation Management Tools</a></p>
                     </div>
 
-
                     <!--- end content -->
                 </main>
             </div> <!-- end .page -->
@@ -83,6 +81,8 @@
             <?php include("https://cdn.lib.ncsu.edu/shared-website-assets/latest/footer/footer.html"); ?>
         </div> <!-- end .inner-wrap -->
     </div> <!-- end .off-canvas-wrap -->
+    <!-- dummy ga.js code for testing -->
+    <script src="scripts/dummy.js" type="text/javascript"></script>
 </body>
 </html>
 
