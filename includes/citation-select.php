@@ -20,7 +20,7 @@
         <select name="citation-style" aria-labelledby="cite-style-text">
             <option value="default"> </option>
             <option value="apa">APA 6</option>
-            <!-- <option value="apa7">APA 7</option> -->
+            <option value="apa7">APA 7</option>
             <option value="modern-language-association">MLA 7</option>
             <option value="modern-language-association-8">MLA 8</option>
             <option value="chicago-author-date">Chicago (author-date)</option>
