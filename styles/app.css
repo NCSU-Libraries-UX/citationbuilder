@@ -171,8 +171,26 @@ input[type='text'],input[type='number']{
         width: 50%;
     }
 
+    button#close-button{
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+        -o-user-select:none;
+    }
+
     .csl-entry{
         line-height: 1.4rem;
+    }
+
+    .note{
+        position: relative;
+        top: 12px;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+        -o-user-select:none;
     }
 }
 
@@ -185,9 +203,27 @@ input[type='text'],input[type='number']{
         width: 90%;
     }
 
+    button#close-button{
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+        -o-user-select:none;
+    }
+
     .csl-entry{
         line-height: 1.4rem;
         width: 90%;
+    }
+
+    .note{
+        position: relative;
+        top: 12px;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+        -o-user-select:none;
     }
 
     input[type='text'],input[type='number'],textarea, select {font-size:16px !important;}

@@ -52,12 +52,14 @@
                                 }
                             ?>
                         </div>
+                        <p>*This tool does not correct for capitalization.</p>
 
                         <div class="reveal" id="citation-modal" data-reveal>
                             <div id="citation-content"></div>
                             <button class="close-button" id="close-button" data-close aria-label="Close modal" type="button">
                                 <span aria-hidden="true">&times;</span>
                             </button>
+                            <p class="note"><small>*This tool does not correct for capitalization.</small></p>
                         </div>
 
                         <h3>The Citation Builder is based on the following citation manuals:</h3>
