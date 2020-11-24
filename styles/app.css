@@ -170,6 +170,9 @@ input[type='text'],input[type='number']{
         margin-left: 25%;
         width: 50%;
     }
+    #citation-content{
+        width: 96%;
+    }
 
     button#close-button{
         -moz-user-select: none;
@@ -201,6 +204,10 @@ input[type='text'],input[type='number']{
         margin-left: 5%;
         min-height: 1px;
         width: 90%;
+    }
+
+    #citation-content{
+        width: 96%;
     }
 
     button#close-button{
