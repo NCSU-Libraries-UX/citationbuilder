@@ -65,9 +65,9 @@
     <div class="row">
 
         <div class="columns medium-3 field print digital">
-            <label for="issued-months-magazine">Date Published
-                <input type="date" name="issued" placeholder="dd-mm-yyyy" class="" aria-labelledby="form-type">
-<!--                 <select name="issued-mo" id="issued-months-magazine">
+            <label for="issued-months-magazine">Month Published
+                <!-- <input type="date" name="issued" placeholder="dd-mm-yyyy" class="" aria-labelledby="form-type"> -->
+                <select name="issued-mo" id="issued-months-magazine">
                     <option value="">month</option>
                     <option value="1">January</option>
                     <option value="2">February</option>
@@ -81,21 +81,26 @@
                     <option value="10">October</option>
                     <option value="11">November</option>
                     <option value="12">December</option>
-                </select> -->
+                </select>
             </label>
         </div>
-  <!--       <div class="columns medium-3 field print digital left">
-            <label for="issued-yr">Issued (year)
+        <div class="columns medium-3 field print digital left">
+            <label for="issued-yr">Year Published
             </label>
             <input type="text" name="issued-yr" placeholder="yyyy" class="columns medium-6" aria-labelledby="form-type"/>
-        </div> -->
+        </div>
 
     </div>
 
     <div class="row">
-        <div class="columns medium-3 field">
+        <div class="columns medium-3 field print">
             <label for="volume">Volume</label>
             <input type="text" name="volume" placeholder="Volume" aria-labelledby="form-type" />
+        </div>
+
+        <div class="columns medium-3 field print">
+            <label for="issue">Issue</label>
+            <input type="text" name="issue" placeholder="Issue" aria-labelledby="form-type" />
         </div>
 
         <div class="columns medium-3 field print left">

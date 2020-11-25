@@ -58,8 +58,29 @@
     <div class="row">
 
         <div class="columns medium-3 field print digital left">
-            <label for="issued">Date Published</label>
-            <input type="date" name="issued" placeholder="dd-mm-yyyy" class="" aria-labelledby="form-type">
+            <label for="issued">Month Published
+                <select name="issued-mo" id="issued-months-magazine">
+                    <option value="">month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </label>
+            <!-- <input type="date" name="issued" placeholder="dd-mm-yyyy" class="" aria-labelledby="form-type"> -->
+        </div>
+        <div class="columns medium-3 field print digital left">
+            <label for="issued-yr">Year Published
+            </label>
+            <input type="text" name="issued-yr" placeholder="yyyy" class="columns medium-6" aria-labelledby="form-type"/>
         </div>
 
         <div class="columns medium-3 field print left">
