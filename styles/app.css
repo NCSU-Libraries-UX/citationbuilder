@@ -1,92 +1,112 @@
 /*begin citation style chooser*/
-#citation-chooser{
+
+#citation-chooser {
     margin-bottom: 30px;
 }
-#citation-chooser select{
-    height: 50px;
+
+#citation-chooser label {
+    font-size: 1rem;
 }
-#cite-text{
+
+#citation-chooser select {
+    height: 70px;
+}
+
+#cite-text {
     padding-right: 0px;
 }
-#cite-text p{
+
+#cite-text p {
     font-size: 1.25rem;
     padding-top: 10px;
 }
-@media only screen and (min-device-width: 768px){
-    #cite-select{
-        padding-left: 0px;
+
+@media only screen and (min-device-width: 768px) {
+    #cite-select {
+        /* padding-left: 0px; */
     }
-    #cite-select select{}
-    #cite-style-text{
+    #cite-select select {}
+    #cite-style-text {
         padding-left: 0px;
         padding-right: 10px;
         text-align: right;
     }
-    #cite-style-select{
+    #cite-style-select {
         padding-left: 0px;
     }
 }
-#cite-style-text p{
+
+#cite-style-text p {
     font-size: 1.25rem;
     padding-top: 10px;
 }
 
+a#clear-form {
+    line-height: 40px;
+    text-decoration: underline;
+}
 
-a#clear-form{
-    background: #999;
-    color: #FFF;
-    padding: 10px;
+a#clear-form:hover {
+    text-decoration: none;
 }
-a#clear-form:hover{
-    background: #333;
-    cursor: pointer;
-}
-@media only screen and (max-device-width: 768px){
-    a#clear-form{
-        margin-left: 15px;
-    }
-}
+
 
 /*begin forms*/
-#form-container{
+
+#form-container {
     border-bottom: 1px solid #ddd;
     margin-bottom: 25px;
     padding-bottom: 25px;
 }
+
+#form-container label {
+    font-size: 1rem;
+}
+
 .form-parent,
-.form-child{
+.form-child {
     display: none;
 }
-.citation-form{}
-.citation-form .citation{
+
+.citation-form {}
+
+.citation-form .citation {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
 }
-.citation-form .citation li{
+
+.citation-form .citation li {
     display: inline-block;
 }
+
+
 /*.citation-form .citation li:first-child a{
     border-left: 1px solid #ddd;
     border-right: 0px;
 }*/
-.citation-form .citation li a{
+
+.citation-form .citation li a {
     border-radius: 0px;
     border-bottom: 1px solid #F5F5F5;
     border-right: 1px solid #ddd;
     border-top: 1px solid #ddd;
     opacity: 1;
 }
-.citation-form .citation li a:hover{
+
+.citation-form .citation li a:hover {
     cursor: pointer;
 }
-.citation-form .citation li:first-child a.button{
+
+.citation-form .citation li:first-child a.button {
     border-left: 1px solid #ccc;
 }
-.citation-form .citation li a.button{
+
+.citation-form .citation li a.button {
     margin-bottom: -1px;
     border-left: 0px solid #ccc;
 }
-.citation-form .citation li a.active{
+
+.citation-form .citation li a.active {
     border-bottom: 1px solid #fff;
     border-left: 0px solid #ccc;
     border-right: 1px solid #ccc;
@@ -94,149 +114,158 @@ a#clear-form:hover{
     color: #333;
     margin-bottom: -1px;
 }
-.citation-form .citation li:first-child a.active{
+
+.citation-form .citation li:first-child a.active {
     border-left: 1px solid #ccc;
 }
-.citation-form select{
+
+.citation-form select {
     margin-bottom: 1rem;
 }
 
-.citation-form .button.active.disabled{
+.citation-form .button.active.disabled {
     background: #FFF;
 }
-.citation-form .button.disabled{
+
+.citation-form .button.disabled {
     background: #F5f5f5;
     border-color: #ccc;
     color: #555;
 }
-input[type='text'],input[type='number']{
+
+input[type='text'],
+input[type='number'] {
     min-width: 30px;
 }
-@media only screen and (min-device-width: 768px){
-    .last-name{
+
+@media only screen and (min-device-width: 768px) {
+    .last-name {
         padding-right: 0px;
     }
-    .add-contributor{
+    .add-contributor {
         position: relative;
         top: -46px;
     }
-    .add-contributor a{
+    .add-contributor a {
         color: #555;
         font-size: 1.5rem;
     }
 }
-@media only screen and (max-device-width: 768px){
-    .add-contributor{
+
+@media only screen and (max-device-width: 768px) {
+    .add-contributor {
         margin-bottom: 30px;
     }
-    .add-contributor a{
+    .add-contributor a {
         color: #555;
         font-size: 3rem;
     }
 }
-.add-contributor.active{
+
+.add-contributor.active {
     position: relative;
     top: 0px;
 }
-@media only screen and (min-device-width: 768px){
-    .remove-contributor{
+
+@media only screen and (min-device-width: 768px) {
+    .remove-contributor {
         position: relative;
         top: 28px;
     }
 }
-.remove-contributor a{
+
+.remove-contributor a {
     color: #555;
     font-size: 1.5rem;
 }
-@media only screen and (max-device-width: 768px){
-    .remove-contributor{
+
+@media only screen and (max-device-width: 768px) {
+    .remove-contributor {
         margin-bottom: 30px;
     }
-    .remove-contributor a{
+    .remove-contributor a {
         font-size: 3rem;
     }
 }
 
-.clipboard{
+.clipboard {
     margin-top: 20px;
 }
-.clipboard p{
+
+.clipboard p {
     font-size: 0.7rem;
 }
 
-@media only screen and (min-device-width: 768px){
-    #citation-modal.reveal-modal{
+@media only screen and (min-device-width: 768px) {
+    #citation-modal.reveal-modal {
         left: 0px;
         margin-left: 25%;
         width: 50%;
     }
-    #citation-content{
+    #citation-content {
         width: 96%;
     }
-
-    button#close-button{
+    button#close-button {
         -moz-user-select: none;
         -webkit-user-select: none;
-        -ms-user-select:none;
-        user-select:none;
-        -o-user-select:none;
+        -ms-user-select: none;
+        user-select: none;
+        -o-user-select: none;
     }
-
-    .csl-entry{
+    .csl-entry {
         line-height: 1.4rem;
     }
-
-    .note{
+    .note {
         position: relative;
         top: 12px;
         -moz-user-select: none;
         -webkit-user-select: none;
-        -ms-user-select:none;
-        user-select:none;
-        -o-user-select:none;
+        -ms-user-select: none;
+        user-select: none;
+        -o-user-select: none;
     }
 }
 
-@media only screen and (max-device-width: 768px){
-    #citation-modal.reveal-modal{
+@media only screen and (max-device-width: 768px) {
+    #citation-modal.reveal-modal {
         left: 0px;
         height: auto;
         margin-left: 5%;
         min-height: 1px;
         width: 90%;
     }
-
-    #citation-content{
+    #citation-content {
         width: 96%;
     }
-
-    button#close-button{
+    button#close-button {
         -moz-user-select: none;
         -webkit-user-select: none;
-        -ms-user-select:none;
-        user-select:none;
-        -o-user-select:none;
+        -ms-user-select: none;
+        user-select: none;
+        -o-user-select: none;
     }
-
-    .csl-entry{
+    .csl-entry {
         line-height: 1.4rem;
         width: 90%;
     }
-
-    .note{
+    .note {
         position: relative;
         top: 12px;
         -moz-user-select: none;
         -webkit-user-select: none;
-        -ms-user-select:none;
-        user-select:none;
-        -o-user-select:none;
+        -ms-user-select: none;
+        user-select: none;
+        -o-user-select: none;
     }
-
-    input[type='text'],input[type='number'],textarea, select {font-size:16px !important;}
+    input[type='text'],
+    input[type='number'],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
 }
 
-input[type="submit"]{
+input[type="submit"] {
     background: #cc0000;
     border: 0px;
     border-radius: 3px;
@@ -244,18 +273,20 @@ input[type="submit"]{
     padding: 10px;
     width: 100%;
 }
-input[type="submit"]:hover{
+
+input[type="submit"]:hover {
     background: #780202;
     cursor: pointer;
 }
 
-span.hidden{
+span.hidden {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-    display:  block;
-<<<<<<< HEAD
+    display: block;
+    <<<<<<< HEAD
 }
+
 =======
 }
->>>>>>> 1c9b04bca802d0e6a502695976a7fb93bb5cbd19
+>>>>>>>1c9b04bca802d0e6a502695976a7fb93bb5cbd19

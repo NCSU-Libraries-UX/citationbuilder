@@ -1,90 +1,90 @@
 <form class="citation-form" data-csl="apa7">
-	<ul class="button-group unstyle-list citation">
-		<li><a class="tiny button disabled active" data-citation="print" href="#">print</a></li>
-		<li><a class="tiny button disabled" data-citation="digital" href="#">digital</a></li>
-	</ul>
-	<input type="hidden" name="type" value="book" id="form-type" />
+    <ul class="button-group unstyle-list citation">
+        <li><a class="tiny button disabled active" data-citation="print" href="#">print</a></li>
+        <li><a class="tiny button disabled" data-citation="digital" href="#">digital</a></li>
+    </ul>
+    <input type="hidden" name="type" value="book" id="form-type" />
 
-	<div class="contributor-container">
-		<div class="row contributor">
-			<div class="columns medium-2 field print digital ">
-				<label for="contributor-book">Contributor
-					<select name="contributor" id="contributor-book">
+    <div class="contributor-container">
+        <div class="row contributor">
+            <div class="columns medium-2 field print digital ">
+                <label for="contributor-book-apa7-book">Contributor
+					<select name="contributor" id="contributor-book-apa7-book">
 						<option value="author">Author</option>
 						<option value="editor">Editor</option>
 						<option value="translator">Translator</option>
 					</select>
 				</label>
-			</div>
-			<div class="columns medium-4 field print digital ">
-				<label>First Name</label>
-				<input type="text" name="given" aria-labelledby="form-type">
-			</div>
-			<div class="columns medium-1 field print digital ">
-				<label>MI</label>
-				<input type="text" name="givenMiddle" aria-labelledby="form-type">
-			</div>
-			<div class="columns medium-4 last-name field print digital ">
-				<label>Last Name/Corp.</label>
-				<input type="text" name="family" aria-labelledby="form-type">
-			</div>
-			<div class="columns medium-1 field print digital ">
-				<div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></a></small></div>
-			</div>
-		</div>
-	</div>
+            </div>
+            <div class="columns medium-4 field print digital ">
+                <label for="given-apa7-book">First Name</label>
+                <input id="given-apa7-book" type="text" name="given">
+            </div>
+            <div class="columns medium-1 field print digital ">
+                <label for="givenMiddle-apa7-book">MI</label>
+                <input id="givenMiddle-apa7-book" type="text" name="givenMiddle">
+            </div>
+            <div class="columns medium-4 last-name field print digital ">
+                <label for="family-apa7-book">Last Name/Corp.</label>
+                <input id="family-apa7-book" type="text" name="family">
+            </div>
+            <div class="columns medium-1 field print digital ">
+                <div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></a></small></div>
+            </div>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="columns medium-1 right end">
-			<div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></a></small></div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="columns medium-1 right end">
+            <div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></a></small></div>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="columns medium-12 field print digital ">
-			<label for="title">Title</label>
-			<input type="text" name="title" aria-labelledby="form-type">
-		</div>
-	</div>
+    <div class="row">
+        <div class="columns medium-12 field print digital ">
+            <label for="title-apa7-book">Title</label>
+            <input id="title-apa7-book" type="text" name="title">
+        </div>
+    </div>
 
-<!--    <div class="row">
+    <!--    <div class="row">
         <div class="columns medium-3 field print">
             <label for="page">Pages<label type="text" name="page" placeholder="ex: 100-110" /></label>
         </div>
     </div> -->
 
-	<label for="publisher">Publication Info</label>
-	<div class="row">
-		<div class="columns medium-6 field print digital">
-			<label for="publisher">Publisher</label>
-			<input type="text" name="publisher" aria-labelledby="form-type">
-		</div>
-		<div class="columns medium-3 field print digital">
-			<label for="location">Location</label>
-			<input type="text" name="publisher-place" aria-labelledby="form-type">
-		</div>
-		<div class="columns medium-3 field print digital left ">
-			<label for="issued-yr">Year</label>
-			<input type="text" name="issued-yr" aria-labelledby="form-type">
-		</div>
-	</div>
+    <label for="publisher">Publication Info</label>
+    <div class="row">
+        <div class="columns medium-6 field print digital">
+            <label for="publisher-apa7-book">Publisher</label>
+            <input id="publisher-apa7-book" type="text" name="publisher">
+        </div>
+        <div class="columns medium-3 field print digital">
+            <label for="location-apa7-book">Location</label>
+            <input id="location-apa7-book" type="text" name="publisher-place">
+        </div>
+        <div class="columns medium-3 field print digital left ">
+            <label for="issued-yr-apa7-book">Year</label>
+            <input id="issued-yr-apa7-book" type="text" name="issued-yr">
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="columns medium-12 field digital ">
-			<label for="URL">URL</label>
-			<input type="text" name="URL" aria-labelledby="form-type">
-		</div>
-	</div>
+    <div class="row">
+        <div class="columns medium-12 field digital ">
+            <label for="URL-apa7-book">URL</label>
+            <input id="URL-apa7-book" type="text" name="URL">
+        </div>
+    </div>
 
-<!-- 	<div class="row">
+    <!-- 	<div class="row">
 		<div class="columns medium-7 field digital ">
 			<p>or</p>
 			<label for="DOI">DOI</label>
-			<input type="text" name="DOI"  aria-labelledby="form-type">
+			<input type="text" name="DOI"  >
 		</div>
 	</div> -->
 
-	<div class="row" id="submit-area">
+    <div class="row" id="submit-area">
         <div class="columns medium-1">
             <input type="submit" value="Submit">
         </div>

@@ -54,7 +54,7 @@
                         </div>
                         <p>*This tool does not correct for capitalization.</p>
 
-                        <div class="reveal" id="citation-modal" data-reveal>
+                        <div class="reveal" id="citation-modal" data-reveal aria-labelledby="citation-content">
                             <div id="citation-content"></div>
                             <button class="close-button" id="close-button" data-close aria-label="Close modal" type="button">
                                 <span aria-hidden="true">&times;</span>
@@ -84,7 +84,7 @@
         </div> <!-- end .inner-wrap -->
     </div> <!-- end .off-canvas-wrap -->
     <!-- dummy ga.js code for testing -->
-    <script src="scripts/dummy.js" type="text/javascript"></script>
+    <!-- <script src="scripts/dummy.js" type="text/javascript"></script> -->
 </body>
 </html>
 
