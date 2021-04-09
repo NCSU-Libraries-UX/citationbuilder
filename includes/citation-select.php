@@ -15,9 +15,6 @@
             </select>
         </label>
     </div>
-    <!-- <div class="columns medium-2" id="cite-style-text">
-        <p>in Citation style</p>
-    </div> -->
     <div class="columns medium-6" id="cite-style-select">
         <label>Choose the citation style
             <select name="citation-style">
