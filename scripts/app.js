@@ -1,4 +1,4 @@
-// The code in thise file controls the UI functionality
+// The code in this file controls the UI functionality
 var app = {
     cite: '',
     style: '',
@@ -37,18 +37,11 @@ var app = {
         app.activateCitationButtons();
         app.getCitation();
         app.handleCitationFields();
-        app.activateContributorButtons();
         app.handleDatePicker();
-
-        // add contrib button
-        $('.add-contributor a').click(function(e) {
-            app.addContributor();
-
-            e.preventDefault();
-        })
 
     },
 
+    // read hash to pre-setup form
     checkFormOnLoad: function() {
         if (!app.cite) {
             app.cite = $('#cite-select select').val();
@@ -59,6 +52,7 @@ var app = {
         app.loadForm();
     },
 
+    // this app is a bunch of html files. select determines which ones we should load
     loadForm: function() {
         $('.form-parent').hide();
         $('.form-child').hide();
@@ -84,18 +78,25 @@ var app = {
     clearForm: function() {
 
         if ($('form.citation-form[data-csl="' + app.style + '"] #clear-form').length == 0) {
-            var clearBtn = '<p><a href="#" id="clear-form">Clear form</a></p>';
+            var clearBtn = '<div class="columns medium-2" id="clear-form-button"><p><a href="#" id="clear-form">Clear fields</a></p></div>';
             $('form.citation-form[data-csl="' + app.style + '"] input[type=submit]').parent().after(clearBtn);
             app.initClearFormButton();
         }
 
     },
 
+    // activate clear form button
     initClearFormButton: function() {
         // init clear form button
         $('form.citation-form[data-csl="' + app.style + '"] #clear-form').click(function(e) {
             c.string = [];
             c.writeToCookie();
+            
+            // hide citation box
+            citations = document.querySelectorAll('.citation-box');
+            for(i=0;i<citations.length;i++){
+                citations[i].style.display = "";
+            }
 
             // clear actual fields
             // var form = $('form.citation-form[data-csl="'+app.style+'"]:visible *');
@@ -120,10 +121,12 @@ var app = {
                 }
             });
 
+
             e.preventDefault();
         })
     },
 
+    // read hash and sent data on to dropdowns. 
     setFormTypeFromUrl: function() {
         if (window.location.hash) {
             var pathArray = window.location.hash.split('/');
@@ -178,56 +181,72 @@ var app = {
         $('.citation-form .' + app.citation).show();
     },
 
-    activateContributorButtons: function() {
 
-        $('.remove-contributor a').click(function(e) {
-            app.removeContributor($(this));
 
-            if ($(app.form + ' .contributor').length > 1) {
-                $('.remove-contributor').css('opacity', '1');
-            } else {
-                $('.remove-contributor').css('opacity', '0.2');
-            }
 
-            e.preventDefault();
-        })
-
-        if ($(app.form + ' .contributor').length > 1) {
-            $('.remove-contributor').css('opacity', '1');
-        } else {
-            $('.remove-contributor').css('opacity', '0.2');
+    
+    // these are the [+] and [-] buttons next to the contributor at the top of each form
+    // this function adds a new row of contributor fields. The click event is directly on the button
+    addContributor: function(elem) {
+        // get the parent element (contributor fields)
+        var item = elem.parentElement.parentElement;
+        
+        // Copy the contributor fields
+        var clone_of_contrib_fields = item.cloneNode(true);
+        // make sure to clear the values of duplicated fields
+        var text_fields = clone_of_contrib_fields.querySelectorAll("input[type='text']");
+        for(i=0;i<text_fields.length;i++){
+            // text_fields[i].value = "";
         }
 
-        app.countContributor();
+        // Append the cloned element to the contrib container
+        item.parentElement.appendChild(clone_of_contrib_fields);
     },
 
-    addContributor: function() {
-        var contr_html = $(app.form + ' .contributor-container .contributor')[0].outerHTML;
-        $(app.form + ' .contributor-container').append(contr_html);
-
-        app.countContributor();
-        app.activateContributorButtons();
-
-    },
-
+    // this function removes a new row of contributor fields. The click event is directly on the button
     removeContributor: function(elem) {
-        if ($(app.form + ' .contributor').length > 1) {
-            $(elem).parent().parent().parent().parent().remove();
-            $('.remove-contributor').css('opacity', '1');
-        } else {
-            $('.remove-contributor').css('opacity', '0.2');
-        }
+        // get the parent element (contributor fields)
+        var item = elem.parentElement.parentElement;
+        item.remove();
     },
 
-    countContributor: function() {
-        if ($('.remove-contributor').length < 2) {
-            $('.remove-contributor').hide();
-            $('.add-contributor').removeClass('active');
-        } else {
-            $('.remove-contributor').show();
-            $('.add-contributor').addClass('active');
+    // manage add/remove contributor buttons
+    countContributors: function() {
+        number_of_add_contributors = document.querySelectorAll(app.form+' .add-contributor').length;
+        number_of_remove_contributors = document.querySelectorAll(app.form+' .remove-contributor').length;
+        max_contributors = 99;
+        // each style has max sontributors until the style no longes accepts them as is returned as either 'et al' or '...'
+        if(app.style == 'apa'){
+            max_contributors = 8;
+        }else if(app.style == 'apa7'){
+            max_contributors = 21;
+        }else if(app.style == 'modern-language-association'){
+            max_contributors = 4;
+        }else if(app.style == 'modern-language-association-8'){
+            max_contributors = 4;
+        }else if(app.style == 'chicago-author-date'){
+            max_contributors = 11;
+        }else if(app.style == 'council-of-science-editors-author-date'){
+            max_contributors = 11;
         }
+
+        if(number_of_add_contributors >= max_contributors){
+            return true;
+        }else{
+            return false;
+        }
+
+        // if (number_of_remove_contributors < 2) {
+        //     $('.add-contributor').removeClass('active');
+        // } else {
+        //     $('.add-contributor').addClass('active');
+        // }
     },
+
+
+
+
+
 
     handleDatePicker: function() {
         var nowTemp = new Date();
@@ -255,6 +274,6 @@ var app = {
 }
 
 
-$(function() {
+document.addEventListener("DOMContentLoaded", function(event) {
     app.init();
 })

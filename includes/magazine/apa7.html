@@ -1,11 +1,12 @@
-<form class="citation-form" data-csl="apa7">
-    <ul class="button-group unstyle-list citation">
-        <li><a class="tiny button active" data-citation="print" href="#">print</a></li>
-        <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
-    </ul>
+<ul class="button-group unstyle-list citation">
+    <li><a class="tiny button active" data-citation="print" href="#">print</a></li>
+    <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
+</ul>
+<form class="citation-form" data-type="magazine" data-csl="apa7" autocomplete="off">
     <input type="hidden" name="type" value="article-magazine" id="form-type" />
 
-    <div class="contributor-container">
+    <div id="contributor-container">
+        <div class="help-text">Contributors will be shortened when citing more than 20 authors</div>
         <div class="row contributor">
             <div class="columns medium-2 field print digital">
                 <label for="contributor-magazine-apa7-magazine">Contributor
@@ -28,15 +29,10 @@
                 <label for="family-apa7-magazine">Last Name/Corp.</label>
                 <input id="family-apa7-magazine" type="text" name="family">
             </div>
-            <div class="columns medium-1 field print digital">
-                <div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></a></small></div>
+            <div class="columns medium-1 field print digital contributor-controls">
+                <button class="remove-contributor" onclick="app.removeContributor(this);"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></button>
+                <button class="add-contributor" onclick="app.addContributor(this);"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></button>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="columns medium-1 right end">
-            <div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></a></small></div>
         </div>
     </div>
 
@@ -57,6 +53,7 @@
     <div class="row">
         <div class="columns medium-12 field digital">
             <label for="URL-apa7-magazine">URL</label>
+            <div class="help-text">ex: https://www.sample-website.com</div>
             <input id="URL-apa7-magazine" type="text" name="URL">
         </div>
     </div>
@@ -65,7 +62,7 @@
 
         <div class="columns medium-3 field print digital">
             <label for="issued-months-magazine-apa7-magazine">Month Published
-                <!-- <input type="date" name="issued" placeholder="dd-mm-yyyy" class="" > -->
+                <!-- <input type="date" name="issued"  class="" > -->
                 <select name="issued-mo" id="issued-months-magazine-apa7-magazine">
                     <option value="">month</option>
                     <option value="1">January</option>
@@ -85,7 +82,7 @@
         </div>
         <div class="columns medium-3 field print digital left">
             <label for="issued-yr-apa7-magazine">Year Published</label>
-            <input id="issued-yr-apa7-magazine" type="text" name="issued-yr" placeholder="yyyy" class="columns medium-6" />
+            <input id="issued-yr-apa7-magazine" type="text" name="issued-yr"  class="columns medium-6" maxlength="4" />
         </div>
 
     </div>
@@ -103,13 +100,17 @@
 
         <div class="columns medium-3 field print left">
             <label for="page-apa7-magazine">Pages</label>
-            <input id="page-apa7-magazine" type="text" name="page" placeholder="ex: 100-110" />
+            <input id="page-apa7-magazine" type="text" name="page"  />
         </div>
     </div>
 
     <div class="row" id="submit-area">
-        <div class="columns medium-1">
-            <input type="submit" value="Submit">
+        <div class="columns medium-2">
+            <input type="submit" value="build citation">
         </div>
+    </div>
+    <div class="citation-box">
+        <div class="citation-content"></div>
+        <button onclick="data.copy_citation_to_clipboard(this)" class="copy-to-clipboard-button">copy citation to clipboard</button>
     </div>
 </form>

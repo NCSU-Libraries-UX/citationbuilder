@@ -1,45 +1,92 @@
 // the code in this file handles the submitting of field data to the zotero
-// library
+// library and returning the citation
 var data = {
 
     init: function() {
-        var activeForm = $('select[name*="citation-style"]').val();
         // event listener for main citation form submit button
-        $('.citation-form').submit(function(e) {
-            // since form data needs to be formatted for zotero 
-            // we hijack the submit so we can manipulate some data
-            data.activateForm(e.currentTarget);
-            e.preventDefault();
-        })
+        const form = document.querySelectorAll('.citation-form');
+        for(i=0;i<form.length;i++){
+            form[i].addEventListener('submit', event => {
+                // submit form data to citation library
+                // data.return_citation(event.currentTarget);
+                event.preventDefault()
+            })
+        }
+
+        const form_input = document.querySelectorAll('.citation-form input[type="submit"]');
+        for(i=0;i<form_input.length;i++){
+            form_input[i].addEventListener('click', event => {
+                form_element = event.currentTarget.parentElement.parentElement.parentElement;
+                // submit form data to citation library
+                data.return_citation(form_element);
+                event.preventDefault()
+            })
+        }
     },
 
-    activateForm: function(form) {
-        // get the submitted form
+    return_citation: function(form) {
+        // catch DOI and remove 'doi:' because citation is already tacking that on
+        doi_element = form.querySelector('input[name="DOI"]');
+        if(doi_element){
+            if(doi_element.value.includes('doi:')){
+                doi_element_split_values = doi_element.value.split("doi:");
+                doi_element.value = doi_element_split_values[1];
+            }
+        }
+
+        // get the current citation form
         data.form = form;
-        // put all data into array
+        
+        // put all field data into array
         data.formData = $(form).serializeArray();
-        data.csl = $(form).data('csl');
+        data.csl = form.dataset.csl;
+        data.type = form.dataset.type;
+        
         // convert it to json for zotero to injest
-        data.json = data.buildJson();
+        data.json = data.build_citation_json();
 
-        // send form data to zotero then add it to modal
-        $('#citation-content').html(cite.init(data.json, data.csl));
-        // open out modal for our users
-        $('#citation-modal').foundation('open');
-        // enable modal close
-        document.getElementById('close-button').addEventListener('click', function(e) {
-            $('#citation-modal').foundation('close');
-        })
-
-        // fires when modal closes
-        $(document).on('closed.zf.reveal', '[data-reveal]', function() {
-            // send focus back to submit button
-            $('#submit-area input').focus();
-        });
-
+        // get form data from zotero then add it to citation div
+        citation_style_select_element = document.getElementById('cite-style-select-element');
+        citation_style = citation_style_select_element.options[citation_style_select_element.selectedIndex].innerHTML;
+        citation_content = '<h2>Your citation in '+citation_style+' format*</h2>'+cite.init(data.json, data.csl);
+        citation_element = form.querySelector(".citation-box");
+        citation_element.style.display = "block";
+        citation_element.querySelector('.citation-content').innerHTML = citation_content;
     },
 
-    buildJson: function() {
+    /**
+     * Write contents of citation to clipboard
+     * @param  {element} obj The "copy to clipboard" button
+     * @return nothing
+    */
+    copy_citation_to_clipboard: function(element){
+        text_to_copy = element.parentElement.querySelector('.csl-entry').innerHTML;
+        
+        // set listener so we can convert text to rich text and preserve formatting.
+        function listener(e) {
+            e.clipboardData.setData("text/html", text_to_copy);
+            e.clipboardData.setData("text/plain", text_to_copy);
+            e.preventDefault();
+            element.innerText = "citation copied to clipboard";
+            reset_clipboard_interval = setInterval(function(){
+                element.innerText = "copy citation to clipboard";
+                clearInterval(reset_clipboard_interval);
+            },5000)
+        }
+        document.addEventListener("copy", listener);
+        document.execCommand("copy");
+        document.removeEventListener("copy", listener);
+
+        // navigator.clipboard.writeText(text_to_copy).then(function() {
+        //     /* clipboard successfully set */
+        //     console.log('yes!');
+        // }, function() {
+        //     /* clipboard write failed */
+        //     console.log('no!');
+        // });
+    },
+
+    build_citation_json: function() {
 
         form = data.form;
         var json = { "Item-1": {} };
@@ -136,35 +183,16 @@ var data = {
                     if (day) {
                         dateObj[2] = day;
                     }
-                    if (time) {
-                        // dateObj[3] = time;
-                    }
 
                     json['Item-1']['issued'] = { 'date-parts': [dateObj] };
                 }
-                // if(name == 'issued-time'){
-                //     var hour = $(data.form).find('input[name*="issued-time"]').val();
-
-                //     if(hour){
-                //         dateObj[0] = hour;
-                //     }
-                //     if(month){
-                //         dateObj[1] = month;
-                //     }
-                //     if(day){
-                //         dateObj[2] = day;
-                //     }
-
-                //     json['Item-1']['issued'] = {'date-parts' : [dateObj]};
-                // }
 
             }
         }
-        // console.log(json);
         return json;
     }
 }
 
-$(function() {
+document.addEventListener("DOMContentLoaded", function(event) {
     data.init();
 })

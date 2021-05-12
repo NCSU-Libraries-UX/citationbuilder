@@ -1,12 +1,13 @@
-<form class="citation-form" data-csl="modern-language-association-8">
-    <ul class="button-group unstyle-list citation">
-        <li><a class="tiny button active" data-citation="print" href="#">print</a></li>
-        <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
-        <!-- <li><a class="tiny button" data-citation="media" href="#">media (film/tv)</a></li> -->
-    </ul>
+<ul class="button-group unstyle-list citation">
+    <li><a class="tiny button active" data-citation="print" href="#">print</a></li>
+    <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
+    <!-- <li><a class="tiny button" data-citation="media" href="#">media (film/tv)</a></li> -->
+</ul>
+<form class="citation-form" data-type="book" data-csl="modern-language-association-8" autocomplete="off">
     <input type="hidden" name="type" value="book" id="form-type" />
 
-    <div class="contributor-container">
+    <div id="contributor-container">
+        <div class="help-text">Contributors will be shortened when citing more than 2 authors</div>
         <div class="row contributor">
             <div class="columns medium-2 field print digital media">
                 <label for="contributor-book-mla8-book">Contributor
@@ -29,15 +30,10 @@
                 <label for="family-mla8-book">Last Name/Corp.</label>
                 <input id="family-mla8-book" type="text" name="family">
             </div>
-            <div class="columns medium-1 field print digital media">
-                <div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></a></small></div>
+            <div class="columns medium-1 field print digital media contributor-controls">
+                <button class="remove-contributor" onclick="app.removeContributor(this);"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></button>
+                <button class="add-contributor" onclick="app.addContributor(this);"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></button>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="columns medium-1 right end">
-            <div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></a></small></div>
         </div>
     </div>
 
@@ -48,9 +44,10 @@
         </div>
     </div>
 
+    <label for="publisher-info" class="section-label">Publication Info</label>
     <div class="row">
         <div class="columns medium-6 field print digital media">
-            <label for="publisher-info-mla8-book">Publication Info</label>
+            <label for="publisher-info-mla8-book">Name of Publisher</label>
             <input id="publisher-info-mla8-book" type="text" name="publisher">
         </div>
         <!--         <div class="columns medium-3 field print digital">
@@ -58,7 +55,7 @@
         </div> -->
         <div class="columns medium-3 field print digital left download media">
             <label for="issued-yr-mla8-book">Issued (year)</label>
-            <input id="issued-yr-mla8-book" type="text" name="issued-yr" pleaceholder="year">
+            <input id="issued-yr-mla8-book" type="text" name="issued-yr" pleaceholder="year" maxlength="4">
         </div>
     </div>
 
@@ -73,6 +70,7 @@
     <div class="row">
         <div class="columns medium-12 field digital media">
             <label for="URL-mla8-book" class="field digital">URL</label>
+            <div class="help-text">ex: https://www.sample-website.com</div>
             <input id="URL-mla8-book" type="text" name="URL">
         </div>
     </div>
@@ -84,8 +82,12 @@
     </div> -->
 
     <div class="row" id="submit-area">
-        <div class="columns medium-1">
-            <input type="submit" value="Submit">
+        <div class="columns medium-2">
+            <input type="submit" value="build citation">
         </div>
+    </div>
+    <div class="citation-box">
+        <div class="citation-content"></div>
+        <button onclick="data.copy_citation_to_clipboard(this)" class="copy-to-clipboard-button">copy citation to clipboard</button>
     </div>
 </form>

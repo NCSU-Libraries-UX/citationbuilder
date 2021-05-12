@@ -4,7 +4,7 @@
     </div> -->
     <div class="columns medium-6" id="cite-select">
         <label>Choose what you want to cite
-            <select name="cite">
+            <select name="cite" id="cite-select-element">
                 <option value="default" selected> select a citation </option>
                 <option value="book">book (in its entirety)</option>
                 <option value="chapter">chapter or essay from a book</option>
@@ -17,7 +17,7 @@
     </div>
     <div class="columns medium-6" id="cite-style-select">
         <label>Choose the citation style
-            <select name="citation-style">
+            <select name="citation-style" id="cite-style-select-element">
                 <option value="default" selected> select a citation style </option>
                 <option value="apa">APA 6</option>
                 <option value="apa7">APA 7</option>

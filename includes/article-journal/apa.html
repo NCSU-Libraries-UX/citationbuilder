@@ -1,11 +1,12 @@
-<form class="citation-form" data-csl="apa">
-    <ul class="button-group unstyle-list citation">
-        <li><a class="tiny button active" data-citation="print" href="#">print</a></li>
-        <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
-    </ul>
+<ul class="button-group unstyle-list citation">
+    <li><a class="tiny button active" data-citation="digital" href="#">digital</a></li>
+    <li><a class="tiny button" data-citation="print" href="#">print</a></li>
+</ul>
+<form class="citation-form" data-type="article-journal" data-csl="apa" autocomplete="off">
     <input type="hidden" name="type" value="article-journal" id="form-type" />
 
-    <div class="contributor-container">
+    <div id="contributor-container">
+        <div class="help-text">Contributors will be shortened when citing more than 7 authors</div>
         <div class="row contributor">
             <div class="columns medium-2 field print digital">
                 <label for="contributor-article-apa6-article">Contributor
@@ -29,15 +30,10 @@
                 <label for="family-apa6-article">Last Name/Corp.</label>
                 <input id="family-apa6-article" type="text" name="family">
             </div>
-            <div class="columns medium-1 field print digital">
-                <div class="remove-contributor"><small><a href="#"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></a></small></div>
+            <div class="columns medium-1 field print digital contributor-controls">
+                <button class="remove-contributor" onclick="app.removeContributor(this);"><i class="fa fa-minus-square"></i><span class="hidden">remove contributor</span></button>
+                <button class="add-contributor" onclick="app.addContributor(this);"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></button>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="columns medium-1 right end">
-            <div class="add-contributor" class=""><small><a href="#"><i class="fa fa-plus-square"></i><span class="hidden">add contributor</span></a></small></div>
         </div>
     </div>
 
@@ -59,43 +55,55 @@
     <div class="row">
         <div class="columns medium-3 field print digital">
             <label for="volume-apa6-article">Volume</label>
-            <input id="volume-apa6-article" type="text" name="volume" placeholder="Volume">
+            <input id="volume-apa6-article" type="text" name="volume">
         </div>
         <div class="columns medium-3 field print digital left">
             <label for="issue-apa6-article">Issue</label>
-            <input id="issue-apa6-article" type="text" name="issue" placeholder="Issue">
+            <input id="issue-apa6-article" type="text" name="issue">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-3 field print digital">
             <label for="issued-yr-apa6-article">Year Published</label>
-            <input id="issued-yr-apa6-article" type="text" name="issued-yr" placeholder="yyyy">
+            <input id="issued-yr-apa6-article" type="text" name="issued-yr" maxlength="4">
         </div>
 
         <div class="columns medium-3 field print digital left">
             <label for="page-apa6-article">Pages</label>
-            <input id="page-apa6-article" type="text" name="page" placeholder="ex: 100-110">
+            <input id="page-apa6-article" type="text" name="page">
         </div>
     </div>
 
+    
     <div class="row">
         <div class="columns medium-12 field digital">
             <label for="URL-apa6-article">URL</label>
+            <div class="help-text">ex: https://www.sample-website.com</div>
             <input id="URL-apa6-article" type="text" name="URL">
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="columns medium-12 field digital">
+            Enter either the URL or DOI. If both are entered citation will default to DOI.
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-7 field digital">
-            <p>or</p>
             <label for="DOI-apa6-article">DOI</label>
+            <div class="help-text">ex: 10.12345/abc/defghi</div>
             <input id="DOI-apa6-article" type="text" name="DOI">
         </div>
     </div>
     <div class="row" id="submit-area">
-        <div class="columns medium-1">
-            <input type="submit" value="Submit">
+        <div class="columns medium-2">
+            <input type="submit" value="build citation">
         </div>
+    </div>
+    <div class="citation-box">
+        <div class="citation-content"></div>
+        <button onclick="data.copy_citation_to_clipboard(this)" class="copy-to-clipboard-button">copy citation to clipboard</button>
     </div>
 </form>

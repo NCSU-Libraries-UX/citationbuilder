@@ -22,21 +22,25 @@ sass --watch styles/app.scss:styles/app.css
     }
 }
 
-a#clear-form {
-    line-height: 40px;
-    text-decoration: underline;
-}
+#clear-form-button{
 
-a#clear-form:hover {
-    text-decoration: none;
+    p{
+        padding: 0px;
+    }
+    a#clear-form {
+        line-height: 40px;
+        text-decoration: underline;
+    }
+    
+    a#clear-form:hover {
+        text-decoration: none;
+    }
 }
 
 
 /*begin forms*/
 #form-container {
-    border-bottom: 2px solid #777777;
     margin-bottom: 25px;
-    padding-bottom: 25px;
 
     .form-parent,
     .form-child {
@@ -46,60 +50,72 @@ a#clear-form:hover {
     label {
         font-size: 1rem;
     }
+    label.section-label{
+        margin-top: 20px;
+    }
     
     
-    .citation-form {
-        .button-group{
-            li{
-                padding: 0px;
+    .button-group{
+        margin: 0px;
+        li{
+            float: left;
+            padding: 0px;
 
-                a.button {
-                    background: #f5f5f5;
-                    border-bottom: 2px solid #777777;
-                    border-left: 0px solid #777777;
-                    border-radius: 0px;
-                    border-right: 2px solid #777777;
-                    border-top: 2px solid #777777;
-                    color: #333333;
-                    opacity: 1;
-                    margin-bottom: -2px;
-                }
-                
-                a:hover {
-                    cursor: pointer;
-                }
-                
-                a.button.active {
-                    background: #ffffff;
-                    border-bottom: 2px solid #ffffff;
-                    border-left: 0px solid #777777;
-                    border-right: 2px solid #777777;
-                    border-top: 2px solid #777777;
-                    color: #333;
-                    margin-bottom: -2px;
-                }
-                
-                &:first-child a.active {
-                    border-left: 2px solid #777777;
-                }
+            a.button {
+                background: #f5f5f5;
+                border-bottom: 1px solid #777777;
+                border-left: 0px solid #777777;
+                border-radius: 0px;
+                border-right: 1px solid #777777;
+                border-top: 1px solid #777777;
+                color: #333333;
+                opacity: 1;
+                margin-bottom: -2px;
+            }
+            
+            a:hover {
+                cursor: pointer;
+            }
+            
+            a.button.active {
+                background: #ffffff;
+                border-bottom: 1px solid #ffffff;
+                border-left: 0px solid #777777;
+                border-right: 1px solid #777777;
+                border-top: 1px solid #777777;
+                color: #333;
+                margin-bottom: -1px;
+            }
+            
+            &:first-child a.button {
+                border-left: 1px solid #777777;
             }
         }
-        .citation {
-            margin-bottom: 20px;
-            border-bottom: 2px solid #777777;
-            
-            select {
-                margin-bottom: 1rem;
-            }
-            
-            li {
-                display: inline-block;
-                
-            }
-            
-            li:first-child a.button {
-                border-left: 2px solid #777777;
-            }
+    }
+    .citation-form {
+        border: 1px solid #777777;
+        padding: 25px;
+    }
+
+    .citation-box{
+        display: none;
+        
+        .citation-content{
+            .csl-entry{
+                border: 1px solid #777777;
+                padding: 20px;
+                width: 100%;
+            }           
+        }
+        .copy-to-clipboard-button{
+            color: #cc0000;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .copy-to-clipboard-button:hover{
+            text-decoration: underline;
+            cursor: pointer;
         }
     }
 }
@@ -110,51 +126,59 @@ input[type='number'] {
     min-width: 30px;
 }
 
-@media only screen and (min-device-width: 768px) {
-    .last-name {
-        padding-right: 0px;
-    }
-    .add-contributor a {
-        color: #555;
-        font-size: 1.5rem;
-    }
+
+.last-name {
+    padding-right: 0px;
+}
+#contributor-container{
+
+    .contributor-controls{
+        // padding: 0px;
+        
+        .add-contributor{
+            display:inline-block;
+            margin: 20px 0px 0px 0px;
+            
+            i {
+                color: #555;
+                font-size: 1.5rem;
+            }
+            &.active {
+                // position: relative;
+                // top: 0px;
+            }
+            
+            // mobile
+            @media only screen and (max-device-width: 768px) {
+                margin: 0px 0px 35px 0px;
+                
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+        .remove-contributor {
+            display:inline-block;
+            margin: 36px 0px 0px 0px;
+            
+            i {
+                color: #555;
+                font-size: 1.5rem;
+            }
+            
+            // mobile
+            @media only screen and (max-device-width: 768px) {
+                margin: 0px 0px 35px 0px;
+                
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+        
+    }   
 }
 
-@media only screen and (max-device-width: 768px) {
-    .add-contributor {
-        margin-bottom: 30px;
-    }
-    .add-contributor a {
-        color: #555;
-        font-size: 3rem;
-    }
-}
-
-.add-contributor.active {
-    position: relative;
-    top: 0px;
-}
-
-@media only screen and (min-device-width: 768px) {
-    .remove-contributor {
-        position: relative;
-        top: 28px;
-    }
-}
-
-.remove-contributor a {
-    color: #555;
-    font-size: 1.5rem;
-}
-
-@media only screen and (max-device-width: 768px) {
-    .remove-contributor {
-        margin-bottom: 30px;
-    }
-    .remove-contributor a {
-        font-size: 3rem;
-    }
-}
 
 .clipboard {
     margin-top: 20px;
@@ -162,54 +186,6 @@ input[type='number'] {
 
 .clipboard p {
     font-size: 0.7rem;
-}
-
-/* -------------- begin citation modal --------------------- */
-#citation-modal{
-    padding: 30px;
-
-    #citation-content{
-        margin-bottom: 20px;
-        padding: 0px 30px 0px 0px;
-    }
-}
-@media only screen and (max-device-width: 768px) {
-    #citation-modal.reveal {
-        left: 0px;
-        height: auto;
-        margin-left: 5%;
-        min-height: 1px;
-        width: 90%;
-    }
-    #citation-content {
-        width: 96%;
-    }
-    button#close-button {
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -o-user-select: none;
-    }
-    .csl-entry {
-        line-height: 1.4rem;
-        width: 90%;
-    }
-    .note {
-        position: relative;
-        top: 12px;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -o-user-select: none;
-    }
-    input[type='text'],
-    input[type='number'],
-    textarea,
-    select {
-        font-size: 16px !important;
-    }
 }
 
 input[type="submit"] {

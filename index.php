@@ -17,6 +17,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/data-storage.js"></script>
+    <script src="scripts/dummy.js"></script>
 </head>
 <body>
 
@@ -54,14 +55,6 @@
                             ?>
                         </div>
                         <p>*This tool does not correct for capitalization.</p>
-
-                        <div class="reveal" id="citation-modal" data-reveal aria-labelledby="citation-content">
-                            <div id="citation-content"></div>
-                            <button class="close-button" id="close-button" data-close aria-label="Close modal" type="button">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <p class="note"><small>*This tool does not correct for capitalization.</small></p>
-                        </div>
 
                         <h3>The Citation Builder is based on the following citation manuals:</h3>
 
