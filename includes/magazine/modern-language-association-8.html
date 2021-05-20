@@ -7,7 +7,6 @@
     <input type="hidden" name="type" value="article-magazine" id="form-type" />
 
     <div id="contributor-container">
-        <div class="help-text">Contributors will be shortened when citing more than 2 authors</div>
         <div class="row contributor">
             <div class="columns medium-2 field print digital database">
                 <label for="contributor-magazine-mla8">Contributor
@@ -38,8 +37,14 @@
     </div>
 
     <div class="row">
+        <div class="columns medium-12">
+            <div class="help-text">If there are more than 2 authors, the first name will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
+        </div>    
+    </div>  
+
+    <div class="row">
         <div class="columns medium-12 field print digital database">
-            <label for="title-magazine-mla8">Article Title</label>
+            <label for="title-magazine-mla8" class="section-label">Article Title</label>
             <input id="title-magazine-mla8" type="text" name="title">
         </div>
     </div>

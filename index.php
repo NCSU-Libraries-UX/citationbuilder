@@ -17,7 +17,8 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/data-storage.js"></script>
-    <script src="scripts/dummy.js"></script>
+    <!-- insert dummy.js to prefill form fields for testing -->
+    <!-- <script src="scripts/dummy.js"></script> -->
 </head>
 <body>
 
@@ -36,8 +37,13 @@
 
                     <div class="medium-12 columns main">
                         <h1>Citation Builder</h1>
-
+                        
                         <?php include './includes/citation-select.php'; ?>
+                        
+                        <!-- if user has disabled JS -->
+                        <noscript>
+                            <div class="callout warning">Citation Builder requires JavaScript to function. If you don't want to enable Javascript, that's fine! We've recommended some <a href="https://www.lib.ncsu.edu/do/cite-sources">citation guides</a> for instructions about generating citations manually.</div>
+                        </noscript>
 
                         <div id="form-container">
                             <?php

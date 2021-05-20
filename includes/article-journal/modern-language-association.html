@@ -6,7 +6,6 @@
     <input type="hidden" name="type" value="article-journal" id="form-type" />
 
     <div id="contributor-container">
-        <div class="help-text">Contributors will be shortened when citing more than 3 authors</div>
         <div class="row contributor">
             <div class="columns medium-2 field print digital">
                 <label for="contributor-article-mla7">Contributor
@@ -38,22 +37,28 @@
     </div>
 
     <div class="row">
+        <div class="columns medium-12">
+            <div class="help-text">If there are more than 3 authors, the first name will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
+        </div>    
+    </div>
+    
+    <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="container-title">Journal Title</label>
+            <label for="container-title" class="section-label">Journal Title</label>
             <input type="text" name="container-title" aria-labelledby="form-type">
         </div>
     </div>
 
-    <label for="publisher">Volume Information</label>
+    <label class="section-label">Volume Information</label>
     <div class="row">
         <div class="columns medium-3 field print digital">
             <label for="volume">Volume</label>
             <input type="text" name="volume" aria-labelledby="form-type">
         </div>
-        <div class="columns medium-3 field print digital left">
+        <!-- <div class="columns medium-3 field print digital left">
             <label for="issue">Issue</label>
             <input type="text" name="number"  aria-labelledby="form-type">
-        </div>
+        </div> -->
     </div>
 
     <div class="row">
@@ -69,28 +74,35 @@
     </div>
 
     <div class="row">
-
         <div class="columns medium-12 field digital">
-            <label for="archive_location">Database Title</label>
+            <label for="archive_location">Database Title (optional)</label>
             <input type="text" name="archive_location" aria-labelledby="form-type">
         </div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
+        <div class="columns medium-12 field digital">
+            <label for="DOI">DOI</label>
+            <div class="help-text">ex: 10.12345/abc/defghi</div>
+            <input type="text" name="DOI" aria-labelledby="form-type">
+        </div>
+    </div>
+    <div class="help-text">Enter either the DOI (recommended) or the URL. If you enter both, the citation will default to DOI.</div> -->
+
+    <!-- <div class="row">
         <div class="columns medium-12 field digital">
             <label for="URL">URL</label>
             <div class="help-text">ex: https://www.sample-website.com</div>
             <input type="text" name="URL" value="" aria-labelledby="form-type">
-
         </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="columns medium-3 field digital">
             <label for="accessed">Date Accessed</label>
             <input type="date" name="accessed" class="" aria-labelledby="form-type">
         </div>
-    </div>
+    </div> -->
 
     <div class="row" id="submit-area">
         <div class="columns medium-2">

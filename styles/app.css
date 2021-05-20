@@ -41,7 +41,7 @@ sass --watch styles/app.scss:styles/app.css
   font-size: 1rem;
 }
 #form-container label.section-label {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 #form-container .button-group {
   margin: 0px;

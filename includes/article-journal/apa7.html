@@ -6,7 +6,6 @@
     <input type="hidden" name="type" value="article-journal" id="form-type" />
 
     <div id="contributor-container">
-        <div class="help-text">Contributors will be shortened when citing more than 20 authors</div>
         <div class="row contributor">
             <div class="columns medium-2 field print digital">
                 <label for="contributor-article">Contributor
@@ -38,8 +37,14 @@
     </div>
 
     <div class="row">
+        <div class="columns medium-12">
+            <div class="help-text">If there are more than 20 authors, the first 20 names will be listed followed by "..." You don't have to enter the rest of the authors.</div>
+        </div>    
+    </div>
+
+    <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="title">Article Title</label>
+            <label for="title" class="section-label">Article Title</label>
             <input type="text" name="title" aria-labelledby="form-type">
         </div>
     </div>
@@ -51,7 +56,7 @@
         </div>
     </div>
 
-    <label for="publisher">Volume Information</label>
+    <label class="section-label">Volume Information</label>
     <div class="row">
         <div class="columns medium-3 field print digital">
             <label for="volume">Volume</label>
@@ -76,6 +81,20 @@
     </div>
 
     <div class="row">
+        <div class="columns medium-7 field digital">
+            <label for="DOI">DOI</label>
+            <div class="help-text">ex: 10.12345/abc/defghi</div>
+            <input type="text" name="DOI" aria-labelledby="form-type">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-12 field digital">
+            <div class="help-text">Enter either the DOI (recommended) or the URL. If you enter both, the citation will default to DOI.</div>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="columns medium-12 field digital">
             <label for="URL">URL</label>
             <div class="help-text">ex: https://www.sample-website.com</div>
@@ -83,24 +102,12 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="columns medium-12 field digital">
-            Enter either the URL or DOI. If both are entered citation will default to DOI.
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="columns medium-7 field digital">
-            <label for="DOI">DOI</label>
-            <div class="help-text">ex: 10.12345/abc/defghi</div>
-            <input type="text" name="DOI" aria-labelledby="form-type">
-        </div>
-    </div>
     <div class="row" id="submit-area">
         <div class="columns medium-2">
             <input type="submit" value="build citation">
         </div>
     </div>
+
     <div class="citation-box">
         <div class="citation-content"></div>
         <button onclick="data.copy_citation_to_clipboard(this)" class="copy-to-clipboard-button">copy citation to clipboard</button>

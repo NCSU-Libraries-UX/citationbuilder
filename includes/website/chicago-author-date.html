@@ -5,7 +5,6 @@
     <input type="hidden" name="type" value="webpage" id="form-type" />
 
     <div id="contributor-container">
-        <div class="help-text">Contributors will be shortened when citing more than 10 authors</div>
         <div class="row contributor">
             <div class="columns medium-2 field digital">
                 <label for="contributor-chicago-website">Contributor
@@ -36,8 +35,14 @@
     </div>
 
     <div class="row">
+        <div class="columns medium-12">
+            <div class="help-text">If there are more than 10 authors, the first 7 names will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
+        </div>    
+    </div>
+
+    <div class="row">
         <div class="columns medium-12 field digital">
-            <label for="title-chicago-website">Title or Description of the Page</label>
+            <label for="title-chicago-website" class="section-label">Title or Description of the Page</label>
             <input id="title-chicago-website" type="text" name="title">
         </div>
 
