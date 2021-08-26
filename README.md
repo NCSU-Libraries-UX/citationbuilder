@@ -33,10 +33,10 @@ INSTALLING CITATION BUILDER
 Please note: Citation Builder installation requires the inclusion of jQuery libraries and plugins that are neither developed nor maintained by the Citation Builder developer.
 
 Citation Builder installation requires the following:
-    1. A web server running PHP 5.2.6 or later: http://php.net
-    2. This application comes with jQuery 1.12.4
-    6. Knowledge of PHP scripting and Javascript
+1. A web server running PHP 5.2.6 or later: http://php.net
+2. This application comes with jQuery 1.12.4
+3. Knowledge of PHP scripting and Javascript
 
 To install Citation Builder:
-    1. Copy or clone the Citation Builder source code to a directory on your web server.
-    2. Include the citation-builder.php file inside your app or web page.
+1. Copy or clone the Citation Builder source code to a directory on your web server.
+2. Include the citation-builder.php file inside your app or web page.
