@@ -346,7 +346,7 @@
   <macro name="accessed">
     <!--using accessed where we don't have an issued date; follows recommendation on p. 53 -->
     <choose>
-      <if variable="issued" match="none">
+      <if type="webpage" variable="issued" match="any">
         <group delimiter=" ">
           <text term="accessed" text-case="capitalize-first"/>
           <date variable="accessed" form="text"/>
