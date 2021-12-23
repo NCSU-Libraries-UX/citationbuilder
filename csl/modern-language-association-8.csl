@@ -235,7 +235,7 @@
           <!--lowercase if we have a preceding element-->
           <if variable="edition container-title" match="any">
             <group delimiter=" ">
-              <text variable="number"/>
+              <text variable="number" prefix="no. " />
             </group>
           </if>
           <!--other contributors preceding the volume-->
@@ -290,9 +290,12 @@
       <choose>
         <if variable="source" match="none">
           <choose>
-            <if variable="URL">
+            <if variable="DOI">
               <text macro="URI"/>
             </if>
+            <else-if variable="URL">
+              <text macro="URI"/>
+            </else-if>
           </choose>
         </if>
       </choose>
