@@ -48,4 +48,4 @@
 <script src="scripts/data.js"></script>
 <script src="scripts/data-storage.js"></script>
 <!-- insert dummy.js to prefill form fields for testing -->
-<script src="scripts/dummy.js"></script>
+<!-- <script src="scripts/dummy.js"></script> -->
