@@ -1,5 +1,5 @@
 Citation Builder, version 2.0
-Developed by the NC state Universtiy Libraries
+Developed by the NC State Universtiy Libraries
 
 
 CONTENTS OF THIS FILE
