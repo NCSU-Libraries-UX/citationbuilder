@@ -1,6 +1,5 @@
 Citation Builder, version 2.0
-Developed by Erik Olson
-2015
+Developed by the NC State University Libraries
 
 
 CONTENTS OF THIS FILE
@@ -23,7 +22,7 @@ Citation Builder is a web-based tool designed to quickly and easily generate cit
     Council of Science Editors, Name-Year (author-date)
 
 
-For more information, visit our Github space at: https://github.com/NCSU-Libraries/citation-builder or the North Carolina State University project page at: http://www.lib.ncsu.edu/dli/projects/citationbuilder/
+For more information, visit our Github space at: https://github.com/NCSU-Libraries/citation-builder or the North Carolina State University project page at: https://www.lib.ncsu.edu/projects/citation-builder
 
 For a demo of Citation Builder, visit the North Carolina State University Libraries installation at: http://www.lib.ncsu.edu/citationbuilder/
 
