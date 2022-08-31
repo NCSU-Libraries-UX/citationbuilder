@@ -1,5 +1,9 @@
 Citation Builder, version 2.0
+<<<<<<< HEAD
 Developed by the NC State University Libraries
+=======
+Developed by the NC State Universtiy Libraries
+>>>>>>> 59268ea671fd8c261298f5fb9757b360af4203fc
 
 
 CONTENTS OF THIS FILE
