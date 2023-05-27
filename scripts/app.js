@@ -269,7 +269,7 @@ var app = {
         // google analytics
         app.citeText = $('#cite-select select option:selected').text();
         app.citeStyleText = $('#cite-style-select select option:selected').text();
-        ga('send', 'event', 'CitationBuilder', app.citeStyleText, app.citeText);
+        _paq.push(['trackEvent', 'CitationBuilder', app.citeStyleText, app.citeText]);
     }
 }
 
