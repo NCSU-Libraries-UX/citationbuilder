@@ -22,17 +22,17 @@ sass --watch styles/app.scss:styles/app.css
     }
 }
 
-#clear-form-button{
+.clear-form{
 
     p{
         padding: 0px;
     }
-    a#clear-form {
+    a.clear-form-button {
         line-height: 40px;
         text-decoration: underline;
     }
     
-    a#clear-form:hover {
+    a.clear-form-button:hover {
         text-decoration: none;
     }
 }

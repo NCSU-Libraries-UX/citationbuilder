@@ -18,14 +18,14 @@ sass --watch styles/app.scss:styles/app.css
   }
 }
 
-#clear-form-button p {
+.clear-form p {
   padding: 0px;
 }
-#clear-form-button a#clear-form {
+.clear-form a.clear-form-button {
   line-height: 40px;
   text-decoration: underline;
 }
-#clear-form-button a#clear-form:hover {
+.clear-form a.clear-form-button:hover {
   text-decoration: none;
 }
 

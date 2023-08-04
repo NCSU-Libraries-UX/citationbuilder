@@ -1,15 +1,14 @@
 <ul class="button-group unstyle-list citation">
-    <li><a class="tiny button active" data-citation="print" href="#">in print</a></li>
-    <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
+    <li><a class="tiny button active" data-citation="digital" href="#">digital</a></li>
 </ul>
-<form class="citation-form" data-type="magazine" data-csl="council-of-science-editors-author-date" autocomplete="off">
-    <input type="hidden" name="type" value="article-magazine" id="form-type" />
+<form class="citation-form" data-type="website" data-csl="modern-language-association-9" autocomplete="off">
+    <input type="hidden" name="type" value="webpage" id="form-type" />
 
     <div id="contributor-container">
         <div class="row contributor">
             <div class="columns medium-2 field print digital">
-                <label for="contributor-magazine-council">Contributor
-                    <select name="contributor" id="contributor-magazine-council">
+                <label for="contributor-mla9-website">Contributor
+                    <select name="contributor" id="contributor-mla9-website">
                         <option value="author">Author</option>
                         <option value="editor">Editor</option>
                         <option value="translator">Translator</option>
@@ -17,16 +16,16 @@
                 </label>
             </div>
             <div class="columns medium-4 field print digital">
-                <label for="given-magazine-council">First Name</label>
-                <input id="given-magazine-council" type="text" name="given">
+                <label for="given-mla9-website">First Name</label>
+                <input id="given-mla9-website" type="text" name="given">
             </div>
             <div class="columns medium-1 field print digital">
-                <label for="givenMiddle-magazine-council">MI</label>
-                <input id="givenMiddle-magazine-council" type="text" name="givenMiddle">
+                <label for="givenMiddle-mla9-website">MI</label>
+                <input id="givenMiddle-mla9-website" type="text" name="givenMiddle">
             </div>
             <div class="columns medium-4 last-name field print digital">
-                <label for="family-magazine-council">Last Name/Corp.</label>
-                <input id="family-magazine-council" type="text" name="family">
+                <label for="family-mla9-website">Last Name/Corp.</label>
+                <input id="family-mla9-website" type="text" name="family">
             </div>
             <div class="columns medium-1 field print digital contributor-controls">
                 <button class="remove-contributor" onclick="app.removeContributor(this);"><img src="assets/minus-square-solid.svg" width="25px" alt="remove contributor"><span class="hidden">remove contributor</span></button>
@@ -37,36 +36,43 @@
 
     <div class="row">
         <div class="columns medium-12">
-            <div class="help-text">If there are more than 10 authors, the first 10 names will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
+            <div class="help-text">If there are more than 2 authors, the first name will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
         </div>    
-    </div> 
+    </div>  
 
     <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="title-magazine-council" class="section-label">Article Title</label>
-            <input id="title-magazine-council" type="text" name="title">
+            <label for="title-mla9-website" class="section-label">Title or Description of the Page</label>
+            <input id="title-mla9-website" type="text" name="title">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="container-title-magazine-council">Magazine Title</label>
-            <input id="container-title-magazine-council" type="text" name="container-title">
+            <label for="container-title-mla9-website">Publisher or Sponsor of Site</label>
+            <input id="container-title-mla9-website" type="text" name="container-title">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field digital">
-            <label for="URL-magazine-council">URL</label>
+            <label for="URL-mla9-website">URL</label>
             <div class="help-text">ex: https://www.sample-website.com</div>
-            <input id="URL-magazine-council" type="text" name="URL" />
+            <input id="URL-mla9-website" type="text" name="URL"  />
         </div>
     </div>
 
+    <!--     <label for="publisher">Owner or Publisher of the Site</label>
     <div class="row">
-        <div class="columns medium-3 field print digital">
-            <label for="issued-months-magazine-council">Date Published
-                <select name="issued-mo" id="issued-months-magazine-council">
+        <div class="columns medium-6 field print digital">
+            <input type="text" name="publisher"  />
+        </div>
+    </div> -->
+
+    <!--     <div class="row">
+        <div class="columns medium-3 field digital">
+            <label for="issued-mo">Date Published
+                <select name="issued-mo">
                     <option value="">month</option>
                     <option value="1">January</option>
                     <option value="2">February</option>
@@ -75,7 +81,7 @@
                     <option value="5">May</option>
                     <option value="6">June</option>
                     <option value="7">July</option>
-                    <option value="8">August</option>
+                    <option value="g">August</option>
                     <option value="9">September</option>
                     <option value="10">October</option>
                     <option value="11">November</option>
@@ -83,29 +89,34 @@
                 </select>
             </label>
         </div>
-        <div class="columns medium-3 field print digital">
-            <label for="issued-yr-magazine-council">Year Published</label>
-            <input id="issued-yr-magazine-council" type="text" name="issued-yr"  class="columns medium-6" maxlength="4" />
+        <div class="columns medium-1 field digital left">
+            <label for="issued-dy">&nbsp;
+                <input type="text" name="issued-dy" id="issued-day"  class="columns medium-12"/>
+            </label>
+        </div>
+        <div class="columns medium-2 field digital left">
+            <label for="issued-yr">&nbsp;
+                <input type="text" name="issued-yr" id="issued-year"  class="columns medium-6" maxlength="4" />
+            </label>
         </div>
 
-        <!--         <div class="columns medium-3 field digital left">
-            <label for="accessed">Date Accessed</label>
-            <input type="date" name="accessed" class="" >
-        </div> -->
+    </div> -->
 
-        <div class="columns medium-3 field print digital left">
-            <label for="page-magazine-council">Pages</label>
-            <input id="page-magazine-council" type="text" name="page" >
-        </div>
-    </div>
-
-
-    <label for="publisher">Volume Information</label>
     <div class="row">
-        <div class="columns medium-3 field print digital">
-            <label for="volume-magazine-council">Volume</label>
-            <input id="volume-magazine-council" type="text" name="volume" />
+        <div class="columns medium-4 field digital left">
+            <label for="issued-mla9-website">Date Published</label>
+            <input id="issued-mla9-website" type="date" name="issued" class="">
         </div>
+        <div class="row">
+            <div class="columns medium-3 field digital">
+                <label for="accessed">Date Accessed</label>
+                <input type="date" name="accessed" class="" aria-labelledby="form-type">
+            </div>
+        </div>
+        <!--    <div class="columns medium-2 field digital left">
+            <label for="issued-time">Time published</label>
+            <input type="text" name="issued-time"  class="fdatepicker-time" data-date-format="hh:ii"  />
+        </div> -->
     </div>
 
     <div class="row" id="submit-area">

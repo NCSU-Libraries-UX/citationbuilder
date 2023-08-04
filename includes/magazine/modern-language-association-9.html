@@ -3,14 +3,14 @@
     <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
     <li><a class="tiny button" data-citation="database" href="#">in a database</a></li>
 </ul>
-<form class="citation-form" data-type="magazine" data-csl="modern-language-association" autocomplete="off">
+<form class="citation-form" data-type="magazine" data-csl="modern-language-association-9" autocomplete="off">
     <input type="hidden" name="type" value="article-magazine" id="form-type" />
 
     <div id="contributor-container">
         <div class="row contributor">
             <div class="columns medium-2 field print digital database">
-                <label for="contributor-magazine-mla7">Contributor
-                    <select name="contributor" id="contributor-magazine-mla7">
+                <label for="contributor-magazine-mla9">Contributor
+                    <select name="contributor" id="contributor-magazine-mla9">
                         <option value="author">Author</option>
                         <option value="editor">Editor</option>
                         <option value="translator">Translator</option>
@@ -18,16 +18,16 @@
                 </label>
             </div>
             <div class="columns medium-4 field print digital database">
-                <label for="given-magazine-mla7">First Name</label>
-                <input id="given-magazine-mla7" type="text" name="given">
+                <label for="given-magazine-mla9">First Name</label>
+                <input id="given-magazine-mla9" type="text" name="given">
             </div>
             <div class="columns medium-1 field print digital database">
-                <label for="givenMiddle-magazine-mla7">MI</label>
-                <input id="givenMiddle-magazine-mla7" type="text" name="givenMiddle">
+                <label for="givenMiddle-magazine-mla9">MI</label>
+                <input id="givenMiddle-magazine-mla9" type="text" name="givenMiddle">
             </div>
             <div class="columns medium-4 last-name field print digital database">
-                <label for="family-magazine-mla7">Last Name/Corp.</label>
-                <input id="family-magazine-mla7" type="text" name="family">
+                <label for="family-magazine-mla9">Last Name/Corp.</label>
+                <input id="family-magazine-mla9" type="text" name="family">
             </div>
             <div class="columns medium-1 field print digital database contributor-controls">
                 <button class="remove-contributor" onclick="app.removeContributor(this);"><img src="assets/minus-square-solid.svg" width="25px" alt="remove contributor"><span class="hidden">remove contributor</span></button>
@@ -38,76 +38,83 @@
 
     <div class="row">
         <div class="columns medium-12">
-            <div class="help-text">If there are more than 3 authors, the first name will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
+            <div class="help-text">If there are more than 2 authors, the first name will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
         </div>    
-    </div>
+    </div>  
 
     <div class="row">
         <div class="columns medium-12 field print digital database">
-            <label for="title-magazine-mla7" class="section-label">Article Title</label>
-            <input id="title-magazine-mla7" type="text" name="title">
+            <label for="title-magazine-mla9" class="section-label">Article Title</label>
+            <input id="title-magazine-mla9" type="text" name="title">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field print digital database">
-            <label for="container-title-magazine-mla7">Magazine Title</label>
-            <input id="container-title-magazine-mla7" type="text" name="container-title">
+            <label for="container-title-magazine-mla9">Magazine Title</label>
+            <input id="container-title-magazine-mla9" type="text" name="container-title">
         </div>
     </div>
 
     <div class="row">
-        <div class="columns medium-3 field print digital database">
-            <label for="issued-months-magazine-mla7">Date Published
-                <select name="issued-month" id="issued-months-magazine-mla7">
+        <!--         <div class="columns medium-3 field print database">
+            <label for="issued-months-magazine-mla9">Date Published
+                <select name="issued-month" id="issued-months-magazine-mla9">
                     <option value="">month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+                    <option value="month-01">January</option>
+                    <option value="month-02">February</option>
+                    <option value="month-03">March</option>
+                    <option value="month-04">April</option>
+                    <option value="month-05">May</option>
+                    <option value="month-06">June</option>
+                    <option value="month-07">July</option>
+                    <option value="month-08">August</option>
+                    <option value="month-09">September</option>
+                    <option value="month-10">October</option>
+                    <option value="month-11">November</option>
+                    <option value="month-12">December</option>
                 </select>
             </label>
         </div>
 
-        <div class="columns medium-3 field print digital database">
-            <label for="issued-yr-magazine-mla7">Year Published</label>
-            <input id="issued-yr-magazine-mla7" type="text" name="issued-yr"  class="columns medium-6" maxlength="4" />
+        <div class="columns medium-3 field print database">
+            <label for="issued-day">Day published
+            </label>
+            <input type="text" name="issued-day"  class="columns medium-6" />
+        </div> -->
+
+        <div class="columns medium-3 field print database">
+            <label for="year-magazine-mla9">Year published</label>
+            <input id="year-magazine-mla9" type="text" name="year"  class="columns medium-6" />
         </div>
 
+
         <div class="columns medium-3 field print database left">
-            <label for="page-magazine-mla7">Pages</label>
-            <input id="page-magazine-mla7" type="text" name="page"  />
+            <label for="page-magazine-mla9">Pages</label>
+            <input id="page-magazine-mla9" type="text" name="page"  />
         </div>
 
     </div>
 
     <div class="row">
         <div class="columns medium-12 field database">
-            <label for="archive_location-magazine-mla7">Database Title</label>
-            <input id="archive_location-magazine-mla7" type="text" name="archive_location" />
+            <label for="archive_location-magazine-mla9">Database Title</label>
+            <input id="archive_location-magazine-mla9" type="text" name="archive_location" />
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field digital database">
-            <label for="URL-magazine-mla7">URL</label>
+            <label for="URL-magazine-mla9">URL</label>
             <div class="help-text">ex: https://www.sample-website.com</div>
-            <input id="URL-magazine-mla7" type="hidden" name="URL" />
+            <input id="URL-magazine-mla9" type="text" name="URL"  />
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-3 field digital database input-append date">
-            <label for="accessed-magazine-mla7">Date Accessed</label>
-            <input id="accessed-magazine-mla7" type="date" name="accessed" class="">
+            <label for="issued-magazine-mla9">Date Published</label>
+            <input id="issued-magazine-mla9" type="date" name="issued" class="">
         </div>
     </div>
 

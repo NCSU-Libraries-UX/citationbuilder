@@ -21,8 +21,9 @@
                 <option value="default" selected> select a citation style </option>
                 <option value="apa">APA 6</option>
                 <option value="apa7">APA 7</option>
-                <option value="modern-language-association">MLA 7</option>
+                <!--option value="modern-language-association">MLA 7</option-->
                 <option value="modern-language-association-8">MLA 8</option>
+                <option value="modern-language-association-9">MLA 9</option>
                 <option value="chicago-author-date">Chicago (author-date)</option>
                 <option value="council-of-science-editors-author-date">CSE/CBE (author-date)</option>
             </select>

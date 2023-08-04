@@ -6,29 +6,34 @@ var app = {
 
     init: function() {
         //citation select
-        $('#cite-select select').change(function(e) {
-            app.cite = $(this).val();
-            app.loadForm();
-            c.readCookie();
+        document.querySelectorAll('#cite-select select').forEach(function(select){
+            select.addEventListener('change', function(e){
+                app.cite = e.target.value;
 
-            // set url
-            app.setURL();
+                app.loadForm();
+                c.readCookie();
 
-            // analytics
-            app.logAnalytics();
+                // set url
+                app.setURL();
+
+                // analytics
+                app.logAnalytics();
+            })
         })
 
         // citation style select
-        $('#cite-style-select select').change(function(e) {
-            app.style = $(this).val();
-            app.loadForm();
-            c.readCookie();
+        document.querySelectorAll('#cite-style-select select').forEach(function(select){
+            select.addEventListener('change', function(e){
+                app.style = e.target.value;
+                app.loadForm();
+                c.readCookie();
 
-            // set URL
-            app.setURL();
+                // set URL
+                app.setURL();
 
-            // analytics
-            app.logAnalytics();
+                // analytics
+                app.logAnalytics();
+            })
 
         })
 
@@ -44,85 +49,83 @@ var app = {
     // read hash to pre-setup form
     checkFormOnLoad: function() {
         if (!app.cite) {
-            app.cite = $('#cite-select select').val();
+            app.cite = document.querySelector('#cite-select select').value;
         }
         if (!app.style) {
-            app.style = $('#cite-style-select select').val();
+            app.style = document.querySelector('#cite-style-select select').value;
         }
         app.loadForm();
     },
 
     // this app is a bunch of html files. select determines which ones we should load
     loadForm: function() {
-        $('.form-parent').hide();
-        $('.form-child').hide();
-        $('#' + app.cite).show();
-        $('.' + app.style).show();
+        // start off by hiding all forms
+        document.querySelectorAll('.form-parent').forEach(function(parent){
+            parent.style.display = 'none';
+        })
+        document.querySelectorAll('.form-child').forEach(function(child){
+            child.style.display = 'none';
+        })
+
+        // show selected form
+        if(document.getElementById(app.cite)){
+            document.getElementById(app.cite).style.display = "block";
+        }
+        document.querySelectorAll('.'+app.style).forEach(function(styleForm){
+            styleForm.style.display = "block";
+        })
 
         app.form = '#' + app.cite + ' .' + app.style;
         app.activateCitationButtons();
         app.getCitation();
         app.handleCitationFields();
         app.handleDatePicker();
-        app.clearForm();
+        app.initClearFormButtons();
     },
 
-    showForm: function() {
-        $('.citation-form').show();
-    },
-
-    hideForm: function() {
-        $('.citation-form').hide();
-    },
-
-    clearForm: function() {
-
-        if ($('form.citation-form[data-csl="' + app.style + '"] #clear-form').length == 0) {
-            var clearBtn = '<div class="columns medium-2" id="clear-form-button"><p><a href="#" id="clear-form">Clear fields</a></p></div>';
-            $('form.citation-form[data-csl="' + app.style + '"] input[type=submit]').parent().after(clearBtn);
-            app.initClearFormButton();
-        }
-
-    },
-
-    // activate clear form button
-    initClearFormButton: function() {
+    /**
+     * activate clear form button 
+     * */ 
+    initClearFormButtons: function() {
         // init clear form button
-        $('form.citation-form[data-csl="' + app.style + '"] #clear-form').click(function(e) {
-            c.string = [];
-            c.writeToCookie();
-            
-            // hide citation box
-            citations = document.querySelectorAll('.citation-box');
-            for(i=0;i<citations.length;i++){
-                citations[i].style.display = "";
-            }
-
-            // clear actual fields
-            // var form = $('form.citation-form[data-csl="'+app.style+'"]:visible *');
-            var form = $('form.citation-form *');
-            $(form).each(function() {
-
-                var type = $(this).attr('type');
-                var tag = $(this).prop('tagName');
-                if (type == 'text') {
-                    $(this).val('');
+        document.querySelectorAll('form.citation-form[data-csl="' + app.style + '"] .clear-form-button').forEach(function(form){
+            form.addEventListener('click', function(e){
+                c.string = [];
+                c.writeToCookie();
+                
+                // hide citation box
+                citations = document.querySelectorAll('.citation-box');
+                for(i=0;i<citations.length;i++){
+                    citations[i].style.display = "";
                 }
-                if (tag == 'SELECT') {
-                    $(this)[0].selectedIndex = 0;
-                }
-                // remove added contributors
-                if ($(this).hasClass('contributor-container')) {
-                    $(this).find('div.row.contributor').each(function(i) {
-                        if (i > 0) {
-                            $(this).remove();
+
+                // clear all fields across all forms
+                document.querySelectorAll('form.citation-form *').forEach(function(field){
+                    var type = field.type;
+                    var tag = field.tagName;
+
+                    if (type == 'text' || type == 'date') {
+                        field.value = "";
+                    }
+                    if (tag == 'SELECT') {
+                        field.selectedIndex = 0;
+                    }
+
+                    // remove added contributors
+                    if(field.id == 'contributor-container'){
+                        let contributors = field.querySelectorAll('div.row.contributor');
+                        if(contributors.length > 1){
+                            for(i=0;i<contributors.length;i++){
+                                if(i > 0){
+                                    contributors[i].remove();
+                                }
+                            }
                         }
-                    })
-                }
-            });
+                    }
+                })
 
-
-            e.preventDefault();
+                e.preventDefault();
+            })
         })
     },
 
@@ -139,35 +142,45 @@ var app = {
 
     },
 
+    /**
+     * cite dropdowns should be preselected based on url vars. 
+     * This allows for deep linking directly to a citation style
+     */
     setDropdowns: function() {
-        $('#cite-select select').val(app.cite);
-        $('#cite-style-select select').val(app.style);
+        document.querySelector('#cite-select select').value = app.cite;
+        document.querySelector('#cite-style-select select').value = app.style;
     },
 
-    handleClearButton: function() {
-        $('#clear-form').show();
-    },
-
+    /**
+     * toggle button above each citation form
+     */
     activateCitationButtons: function() {
         //citation
-        $('#' + app.cite + ' .' + app.style + ' .citation li a').click(function(e) {
-            $('#' + app.cite + ' .' + app.style + ' .citation li a').removeClass('active');
-            $(this).addClass('active');
-            app.citation = $(this).data('citation');
-            app.handleCitationFields();
+        let citations = document.querySelectorAll('#' + app.cite + ' .' + app.style + ' .citation li a');
+        citations.forEach(function(item){
+            item.addEventListener('click', function(e){
+                citations.forEach(function(citation){
+                    citation.classList.remove('active');
+                })
+                item.classList.add('active');
+                app.citation = item.dataset.citation;
+                app.handleCitationFields();
 
-            e.preventDefault();
+                e.preventDefault();
+            })
         })
     },
 
+    /**
+     * set citation based on value of toggle above form fields
+     */
     getCitation: function() {
-        $('#' + app.cite + ' .' + app.style + ' .citation li').each(function() {
-            var elem = $(this).find('a');
-
-            if ($(elem).hasClass('active')) {
-                app.citation = $(elem).data('citation');
+        document.querySelectorAll('#' + app.cite + ' .' + app.style + ' .citation li').forEach(function(citation){
+            let elem = citation.querySelector('a');
+            if(elem.classList.contains('active')){
+                app.citation = elem.dataset.citation;
             }
-        });
+        })
     },
 
     setURL: function() {
@@ -176,13 +189,17 @@ var app = {
         }
     },
 
+    /**
+     * hide and show fields based on 
+     */
     handleCitationFields: function() {
-        $('.citation-form .field').hide();
-        $('.citation-form .' + app.citation).show();
+        document.querySelectorAll('.citation-form .field').forEach(function(item){
+            item.style.display = "none";
+        })
+        document.querySelectorAll('.citation-form .' + app.citation).forEach(function(item){
+            item.style.display = "";
+        })
     },
-
-
-
 
     
     // these are the [+] and [-] buttons next to the contributor at the top of each form
@@ -235,18 +252,7 @@ var app = {
         }else{
             return false;
         }
-
-        // if (number_of_remove_contributors < 2) {
-        //     $('.add-contributor').removeClass('active');
-        // } else {
-        //     $('.add-contributor').addClass('active');
-        // }
     },
-
-
-
-
-
 
     handleDatePicker: function() {
         var nowTemp = new Date();
@@ -265,10 +271,13 @@ var app = {
 
     },
 
+    /**
+     * send analytics to matomo
+     */
     logAnalytics: function() {
-        // google analytics
-        app.citeText = $('#cite-select select option:selected').text();
-        app.citeStyleText = $('#cite-style-select select option:selected').text();
+        // matomo analytics
+        app.citeText = document.querySelector('#cite-select select').value;
+        app.citeStyleText = document.querySelector('#cite-style-select select').value;
         _paq.push(['trackEvent', 'CitationBuilder', app.citeStyleText, app.citeText]);
     }
 }

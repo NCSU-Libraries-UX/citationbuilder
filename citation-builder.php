@@ -12,7 +12,7 @@
 
 <div id="form-container">
     <?php
-        $csl_array = array('apa','apa7','chicago-author-date','council-of-science-editors-author-date','modern-language-association','modern-language-association-8');
+        $csl_array = array('apa','apa7','chicago-author-date','council-of-science-editors-author-date','modern-language-association-8','modern-language-association-9');
         $medium_array = array('book','chapter','magazine','newspaper','article-journal','website');
         foreach($medium_array as $med){
             print '<div class="form-parent" id="'.$med.'">';
@@ -31,8 +31,8 @@
 
 <ul>
     <li>American Psychological Association 6th edition</li>
-    <li>Modern Language Association 7th edition</li>
     <li>Modern Language Association 8th edition</li>
+    <li>Modern Language Association 9th edition</li>
     <li>Chicago Manual of Style 16th edition</li>
     <li>Council of Science Editors</li>
 </ul>

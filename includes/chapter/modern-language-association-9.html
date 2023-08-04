@@ -2,31 +2,31 @@
     <li><a class="tiny button active" data-citation="print" href="#">print</a></li>
     <li><a class="tiny button" data-citation="digital" href="#">digital</a></li>
 </ul>
-<form class="citation-form" data-type="chapter" data-csl="council-of-science-editors-author-date" autocomplete="off">
+<form class="citation-form" data-type="chapter" data-csl="modern-language-association-9" autocomplete="off">
     <input type="hidden" name="type" value="chapter" id="form-type" />
 
     <div id="contributor-container">
         <div class="row contributor">
             <div class="columns medium-2 field print digital">
-                <label for="contributor-chapter-council-chapter-cse">Contributor
-                    <select name="contributor" id="contributor-chapter-council-chapter-cse">
-                        <option value="author">Author</option>
+                <label for="contributor-chapter-mla9">Contributor
+                    <select name="contributor" id="contributor-chapter-mla9">
+                        <option value="author" >Author</option>
                         <option value="editor">Editor</option>
                         <option value="translator">Translator</option>
                     </select>
                 </label>
             </div>
             <div class="columns medium-4 field print digital">
-                <label for="given-chapter-cse">First Name</label>
-                <input id="given-chapter-cse" type="text" name="given" />
+                <label for="given-chapter-mla9">First Name</label>
+                <input id="given-chapter-mla9" type="text" name="given">
             </div>
             <div class="columns medium-1 field print digital">
-                <label for="givenMiddle-chapter-cse">MI</label>
-                <input id="givenMiddle-chapter-cse" type="text" name="givenMiddle" />
+                <label for="givenMiddle-chapter-mla9">MI</label>
+                <input id="givenMiddle-chapter-mla9" type="text" name="givenMiddle">
             </div>
             <div class="columns medium-4 last-name field print digital">
-                <label for="family-chapter-cse">Last Name/Corp.</label>
-                <input id="family-chapter-cse" type="text" name="family" />
+                <label for="family-chapter-mla9">Last Name/Corp.</label>
+                <input id="family-chapter-mla9" type="text" name="family">
             </div>
             <div class="columns medium-1 field print digital contributor-controls">
                 <button class="remove-contributor" onclick="app.removeContributor(this);"><img src="assets/minus-square-solid.svg" width="25px" alt="remove contributor"><span class="hidden">remove contributor</span></button>
@@ -37,63 +37,70 @@
 
     <div class="row">
         <div class="columns medium-12">
-            <div class="help-text">If there are more than 10 authors, the first 10 names will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
+            <div class="help-text">If there are more than 2 authors, the first name will be listed followed by "et al." You don't have to enter the rest of the authors.</div>
         </div>    
-    </div> 
+    </div>  
 
     <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="title-chapter-cse" class="section-label">Chapter/Essay Title</label>
-            <input id="title-chapter-cse" type="text" name="title">
+            <label for="title-chapter-mla9" class="section-label">Chapter/Essay Title</label>
+            <input id="title-chapter-mla9" type="text" name="title">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field print digital">
-            <label for="container-title-chapter-cse">Book Title</label>
-            <input id="container-title-chapter-cse" type="text" name="container-title">
-
+            <label for="container-title-chapter-mla9">Book Title</label>
+            <input id="container-title-chapter-mla9" type="text" name="container-title">
         </div>
     </div>
 
     <label for="publisher" class="section-label">Publication Info</label>
     <div class="row">
-        <div class="columns medium-6 field print digital">
-            <label for="publisher-chapter-cse">Name of Publisher</label>
-            <input id="publisher-chapter-cse" type="text" name="publisher">
-
+        <div class="columns medium-6 field print">
+            <label for="publisher-chapter-mla9">Name of Publisher</label>
+            <input id="publisher-chapter-mla9" type="text" name="publisher">
         </div>
-        <div class="columns medium-3 field print digital">
-            <label for="location-chapter-cse">Location</label>
-            <input id="location-chapter-cse" type="text" name="publisher-place">
-        </div>
-        <div class="columns medium-3 field print digital left">
-            <label for="issued-yr-chapter-cse">Issued (year)</label>
-            <input id="issued-yr-chapter-cse" type="text" name="issued-yr" maxlength="4">
+        <!--         <div class="columns medium-3 field print digital">
+            <label for="location"><input type="text" name="publisher-place"  /></label>
+        </div> -->
+        <div class="columns medium-3 field print left">
+            <label for="issued-yr-chapter-mla9">Issued (year)</label>
+            <input id="issued-yr-chapter-mla9" type="text" name="issued-yr" maxlength="4">
         </div>
     </div>
 
     <div class="row">
-        <div class="columns medium-3 field print">
-            <label for="page-chapter-cse">Pages</label>
-            <input id="page-chapter-cse" type="text" name="page" >
+        <div class="columns medium-3 field print digital">
+            <label for="page-chapter-mla9">Pages</label>
+            <input id="page-chapter-mla9" type="text" name="page" >
+        </div>
+        <div class="columns medium-3 field print digital left">
+            <label for="volume-chapter-mla9">Volume</label>
+            <input id="volume-chapter-mla9" type="text" name="volume" >
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns medium-7 field digital">
+            <label for="archive_location-chapter-mla9">Website or Database Title</label>
+            <input id="archive_location-chapter-mla9" type="text" name="archive_location">
         </div>
     </div>
 
     <div class="row">
         <div class="columns medium-12 field digital">
-            <label for="URL-chapter-cse">URL</label>
+            <label for="URL-chapter-mla9">URL</label>
             <div class="help-text">ex: https://www.sample-website.com</div>
-            <input id="URL-chapter-cse" type="text" name="URL">
+            <input id="URL-chapter-mla9" type="text" name="URL" >
         </div>
     </div>
 
-    <div class="row">
-        <div class="columns medium-4 field digital left">
-            <label for="accessed-chapter-cse">Date Accessed</label>
-            <input id="accessed-chapter-cse" type="date" name="accessed" class="">
+    <!--     <div class="row">
+        <div class="columns medium-3 field digital input-append date">
+            <label for="accessed">Date Accessed<input type="text" name="accessed"  class="fdatepicker" data-date-format="dd-mm-yyyy" /></label>
         </div>
-    </div>
+    </div> -->
 
     <div class="row" id="submit-area">
         <div class="columns medium-2">
