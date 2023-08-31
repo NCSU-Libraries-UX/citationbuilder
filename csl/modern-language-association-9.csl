@@ -193,7 +193,7 @@
           <text variable="genre"/>
         </if>
       </choose>
-      <text variable="number"/>
+      <text variable="number" prefix="no. "/>
     </group>
   </macro>
   <macro name="publisher">

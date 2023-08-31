@@ -31,6 +31,7 @@
 
 <ul>
     <li>American Psychological Association 6th edition</li>
+    <li>American Psychological Association 7th edition</li>
     <li>Modern Language Association 8th edition</li>
     <li>Modern Language Association 9th edition</li>
     <li>Chicago Manual of Style 16th edition</li>
