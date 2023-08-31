@@ -16,8 +16,8 @@ Citation Builder is a web-based tool designed to quickly and easily generate cit
 
     American Psychological Association 6th edition
     American Psychological Association 7th edition
-    Modern Language Association 7th edition
     Modern Language Association 8th edition
+    Modern Language Association 9th edition
     Chicago Manual of Style 16th edition (author-date)
     Council of Science Editors, Name-Year (author-date)
 
