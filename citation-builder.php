@@ -1,5 +1,4 @@
 <link rel="stylesheet" media="all" href="styles/fontawesome.css" />
-<link rel="stylesheet" media="all" href="styles/core.css" />
 <link rel="stylesheet" href="styles/app.css" />
 <h1>Citation Builder</h1>
 
