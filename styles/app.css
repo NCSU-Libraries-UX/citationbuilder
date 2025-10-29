@@ -44,6 +44,7 @@ sass --watch styles/app.scss:styles/app.css
   margin-top: 15px;
 }
 #form-container .button-group {
+  display: flex;
   margin: 0px;
 }
 #form-container .button-group li {
@@ -51,13 +52,13 @@ sass --watch styles/app.scss:styles/app.css
   padding: 0px;
 }
 #form-container .button-group li a.button {
-  background: #f5f5f5;
+  background: light-dark(#f5f5f5, #444444);
   border-bottom: 1px solid #777777;
   border-left: 0px solid #777777;
   border-radius: 0px;
   border-right: 1px solid #777777;
   border-top: 1px solid #777777;
-  color: #333333;
+  color: light-dark(#333, #fff);
   opacity: 1;
   margin-bottom: -2px;
 }
@@ -65,12 +66,12 @@ sass --watch styles/app.scss:styles/app.css
   cursor: pointer;
 }
 #form-container .button-group li a.button.active {
-  background: #ffffff;
-  border-bottom: 1px solid #ffffff;
+  background: none;
+  border-bottom: 1px solid light-dark(#ffffff, #151515);
   border-left: 0px solid #777777;
   border-right: 1px solid #777777;
   border-top: 1px solid #777777;
-  color: #333;
+  color: light-dark(#333, #fff);
   margin-bottom: -1px;
 }
 #form-container .button-group li:first-child a.button {
@@ -112,6 +113,11 @@ input[type=number] {
   display: inline-block;
   margin: 20px 0px 0px 0px;
 }
+#contributor-container .contributor-controls .add-contributor svg {
+  color: light-dark(#333333, #777777);
+  height: 25px;
+  width: 25px;
+}
 #contributor-container .contributor-controls .add-contributor i {
   color: #555;
   font-size: 1.5rem;
@@ -128,8 +134,13 @@ input[type=number] {
   display: inline-block;
   margin: 36px 0px 0px 0px;
 }
+#contributor-container .contributor-controls .remove-contributor svg {
+  color: light-dark(#333333, #777777);
+  height: 25px;
+  width: 25px;
+}
 #contributor-container .contributor-controls .remove-contributor i {
-  color: #555;
+  color: light-dark(#555, #fff);
   font-size: 1.5rem;
 }
 @media only screen and (max-device-width: 768px) {
@@ -149,17 +160,17 @@ input[type=number] {
   font-size: 0.7rem;
 }
 
-input[type=submit] {
+#submit-area input[type=submit] {
   background: #cc0000;
   border: 0px;
   border-radius: 3px;
   color: #ffffff;
   min-width: 113px;
   padding: 10px;
+  text-align: center;
   width: 100%;
 }
-
-input[type=submit]:hover {
+#submit-area input[type=submit]:hover {
   background: #780202;
   cursor: pointer;
 }
